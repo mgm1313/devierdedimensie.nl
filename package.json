@@ -1,20 +1,36 @@
 {
-  "name": "gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
-  "version": "3.0.141",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "name": "XXIV-Memories",
+  "description": "Gatsby styled with Tailwind, hosted on ZEIT Now",
+  "version": "0.1.0",
+  "author": "Maurits Misana <maurits@techmaus.nl>",
   "dependencies": {
-    "gatsby": "2.17.13",
-    "gatsby-plugin-manifest": "2.2.27",
-    "gatsby-plugin-offline": "3.0.21",
-    "gatsby-plugin-postcss": "2.1.14",
-    "gatsby-plugin-purgecss": "4.0.1",
-    "gatsby-plugin-react-helmet": "3.1.14",
-    "graphql": "14.5.8",
-    "prop-types": "15.7.2",
-    "react": "16.11.0",
-    "react-dom": "16.11.0",
-    "react-helmet": "5.2.1"
+    "fslightbox-react": "file:src/lib/fslightbox-react-pro-1.1.0.tgz",
+    "gatsby": "^2.18.17",
+    "gatsby-image": "^2.2.37",
+    "gatsby-plugin-manifest": "^2.2.34",
+    "gatsby-plugin-offline": "^3.0.30",
+    "gatsby-plugin-postcss": "^2.1.18",
+    "gatsby-plugin-purgecss": "^4.0.1",
+    "gatsby-plugin-react-helmet": "^3.1.18",
+    "gatsby-plugin-react-helmet-async": "^1.0.13",
+    "gatsby-plugin-sharp": "^2.3.10",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.1.43",
+    "gatsby-source-firebase": "^1.0.0",
+    "gatsby-transformer-remark": "^2.6.45",
+    "gatsby-transformer-sharp": "^2.3.9",
+    "graphql": "^14.5.8",
+    "html-react-parser": "^0.10.0",
+    "lazysizes": "^5.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-animate-height": "^2.0.18",
+    "react-dom": "^16.12.0",
+    "react-helmet-async": "^1.0.4",
+    "react-image-lightbox": "^5.1.1",
+    "react-player": "^1.14.2",
+    "react-scroll-up": "^1.3.3",
+    "react-scrolllock": "^5.0.0"
   },
   "keywords": [
     "gatsby",
@@ -24,6 +40,8 @@
   ],
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf .cache",
+    "eslint-check": "eslint --print-config src/pages/index.js | eslint-config-prettier-check",
     "analyze:lint": "eslint --ext .jsx --ext .js .",
     "analyze:prettier": "prettier --list-different '**/*.{js,css,md,json}'",
     "analyze": "npm run analyze:lint && npm run analyze:prettier",
@@ -42,10 +60,12 @@
     "babel-eslint": "10.0.3",
     "cssnano": "^4.1.10",
     "eslint": "6.6.0",
+    "eslint-config-prettier": "^6.8.0",
     "eslint-config-react-app": "5.0.2",
     "eslint-plugin-flowtype": "4.4.1",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "7.16.0",
     "eslint-plugin-react-hooks": "2.3.0",
     "prettier": "1.19.1",
@@ -54,9 +74,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind"
+    "url": "https://github.com/TECHMAUS/XXIV-Memories"
   },
   "bugs": {
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind/issues"
+    "url": "https://github.com/TECHMAUS/XXIV-Memories/issues"
   }
 }

@@ -1,3 +1,192 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-variant-ligatures: no-common-ligatures;
+  font-display: swap;
+}
+
+#shape-1d {
+  top: 5%;
+  left: 10%;
+  width: 100%;
+  transform: scale(2);
+  max-width: unset;
+}
+
+@screen sm {
+  #shape-1d {
+    top: 0;
+    transform: scale(1.1);
+  }
+}
+
+@screen 2xl {
+  #shape-1d {
+    max-width: 75vw;
+    left: 30%;
+  }
+}
+
+#page-media #shape-2d {
+  top: 10%;
+  right: -15%;
+  width: 100vw;
+  max-width: 1500px;
+  transform: rotate(20deg);
+}
+
+#page-media #shape-3d {
+  top: 40%;
+  left: -25%;
+  width: 120vw;
+  max-width: 1500px;
+  transform: rotate(20deg);
+}
+
+#page-media #shape-4d {
+  top: 70%;
+  right: -20%;
+  width: 120vw;
+  max-width: 1500px;
+  transform: rotate(15deg);
+}
+
+.text-columns p:first-of-type::first-letter {
+  @apply leading-none font-medium float-left pr-1;
+  font-size: 2.6rem;
+}
+
+.aspect-ratio-box::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: calc(2 / 3 * 100%);
+}
+.aspect-ratio-16_9.aspect-ratio-box::before {
+  padding-top: calc(9 / 16 * 100%);
+}
+.aspect-ratio-21_9.aspect-ratio-box::before {
+  padding-top: calc(1 / 2.35 * 100%);
+}
+.aspect-ratio-box::after {
+  /* to clear float */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.g-image-thumb.lazyload {
+  image-rendering: pixelated;
+}
+
+.g-image-thumb.lazyloaded {
+  image-rendering: unset;
+}
+
+.ril-outer {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.ril-caption-content.ril__captionContent {
+  @apply mx-auto;
+}
+
+.ril__caption {
+  max-height: unset;
+  overflow-y: hidden;
+  background: linear-gradient(transparent, rgba(30, 30, 30, 0.8) 10%);
+}
+
+.ril__toolbarItem {
+  @apply text-gray-300 text-sm;
+}
+
+.ril__builtinButton {
+  @apply h-full w-full;
+}
+
+.ril__toolbar {
+  background-color: transparent;
+}
+
+.ril-toolbar-left.ril__toolbarLeftSide {
+  @apply text-xs px-2;
+}
+
+.ril-toolbar-right.ril__toolbarRightSide {
+  @apply p-0;
+}
+
+.ril__toolbarSide {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ril__flagButton {
+  background: url("data:image/svg+xml;base64,ICAgICAgICA8c3ZnCiAgICAgICAgICBmaWxsPSIjZmZmZmZmIgogICAgICAgICAgaGVpZ2h0PSIxNyIKICAgICAgICAgIHZpZXdCb3g9IjAgMCAyMCAyMCIKICAgICAgICAgIHdpZHRoPSIxNyIKICAgICAgICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgICAgICA+CiAgICAgICAgICA8cGF0aCBkPSJNNy42NjcgMTJIMnY4SDBWMGgxMmwuMzMzIDJIMjBsLTMgNiAzIDZIOGwtLjMzMy0yeiIgLz4KICAgICAgICA8L3N2Zz4=")
+    no-repeat center;
+}
+
+.ril__downloadButton {
+  background: url("data:image/svg+xml;base64,ICAgICAgICA8c3ZnCiAgICAgICAgICBmaWxsPSIjZmZmZmZmIgogICAgICAgICAgaGVpZ2h0PSIyMCIKICAgICAgICAgIHZpZXdCb3g9IjAgMCAyMCAyMCIKICAgICAgICAgIHdpZHRoPSIyMCIKICAgICAgICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgICAgICA+CiAgICAgICAgICA8cGF0aCBkPSJNMTMgOFYySDd2NkgybDggOCA4LThoLTV6TTAgMThoMjB2Mkgwdi0yeiIgLz4KICAgICAgICA8L3N2Zz4=")
+    no-repeat center;
+}
+
+.ril__infoButton {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0iI2ZmZmZmZiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj4KPHBhdGggZD0iTTIuOTMgMTcuMDdBMTAgMTAgMCAxIDEgMTcuMDcgMi45MyAxMCAxMCAwIDAgMSAyLjkzIDE3LjA3em0xMi43My0xLjQxQTggOCAwIDEgMCA0LjM0IDQuMzRhOCA4IDAgMCAwIDExLjMyIDExLjMyek05IDExVjloMnY2SDl2LTR6bTAtNmgydjJIOVY1eiIvPgo8L3N2Zz4=")
+    no-repeat center;
+}
+
+.ril__builtinButton {
+  background-size: 18px;
+}
+
+.gallery-item:hover .featured-image {
+  filter: grayscale(100%) brightness(0.8) blur(2px);
+}
+
+.gallery-item:hover .gallery-item-title {
+  transform: translate3d(0px, -1px, 0px);
+}
+
+.xxiv-count-label {
+  transform: translateY(-100%);
+}
+
+.gallery-titel {
+  overflow-wrap: break-word;
+}
+
+.ril__toolbarItem {
+  width: 40px;
+  @apply h-full;
+}
+
+.ril-toolbar-left .ril__toolbarItem {
+  width: unset;
+}
+
+.ril-toolbar-right .ril__toolbarItem {
+  line-height: unset;
+}
+
+@screen bigm {
+  .text-columns {
+    column-count: 2;
+  }
+
+  .ril-toolbar-left.ril__toolbarLeftSide {
+    @apply px-3;
+  }
+
+  .ril__toolbarItem {
+    width: 50px;
+  }
+
+  .ril__builtinButton {
+    background-size: initial;
+  }
+}
