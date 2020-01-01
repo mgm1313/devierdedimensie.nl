@@ -1,17 +1,14 @@
 {
-  "name": "XXIV-Memories",
-  "description": "Gatsby styled with Tailwind, hosted on ZEIT Now",
-  "version": "0.1.0",
+  "name": "xxiv-memories",
+  "version": "0.3.0",
   "author": "Maurits Misana <maurits@techmaus.nl>",
   "dependencies": {
-    "fslightbox-react": "file:src/lib/fslightbox-react-pro-1.1.0.tgz",
     "gatsby": "^2.18.17",
     "gatsby-image": "^2.2.37",
     "gatsby-plugin-manifest": "^2.2.34",
     "gatsby-plugin-offline": "^3.0.30",
     "gatsby-plugin-postcss": "^2.1.18",
     "gatsby-plugin-purgecss": "^4.0.1",
-    "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-react-helmet-async": "^1.0.13",
     "gatsby-plugin-sharp": "^2.3.10",
     "gatsby-plugin-web-font-loader": "^1.0.4",
@@ -32,12 +29,6 @@
     "react-scroll-up": "^1.3.3",
     "react-scrolllock": "^5.0.0"
   },
-  "keywords": [
-    "gatsby",
-    "tailwind",
-    "tailwindcss",
-    "purgecss"
-  ],
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf .cache",
@@ -47,6 +38,7 @@
     "analyze": "npm run analyze:lint && npm run analyze:prettier",
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "fix:lint": "eslint --ext .jsx --ext .js . --fix",
     "fix:prettier": "prettier --write '**/*.{js,css,md,json}'",
     "fix": "npm run fix:lint && npm run fix:prettier",
@@ -62,12 +54,12 @@
     "eslint": "6.6.0",
     "eslint-config-prettier": "^6.8.0",
     "eslint-config-react-app": "5.0.2",
-    "eslint-plugin-flowtype": "4.4.1",
+    "eslint-plugin-flowtype": "^4.4.1",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "7.16.0",
-    "eslint-plugin-react-hooks": "2.3.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "prettier": "1.19.1",
     "tailwindcss": "1.1.3",
     "typescript": "3.7.2"

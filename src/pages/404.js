@@ -15,7 +15,8 @@ function NotFoundPage() {
           src={abductionIllustration}
         />
         <h2 className="uppercase leading-tight bg-gala text-white text-xl sm:text-2xl font-bold inline-block my-8 p-3">
-          Oops, deze pagina is verdwenen in de 4<sup className="lowercase">e</sup> dimensie...
+          Oops, deze pagina is verdwenen in de 4
+          <sup className="lowercase">e</sup> dimensie...
         </h2>
       </div>
     </Layout>

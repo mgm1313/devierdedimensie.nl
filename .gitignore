@@ -10,9 +10,6 @@ yarn-error.log
 # macOS
 .DS_Store
 
-# deployment-specific configs
-now.json
-
 # Created by https://www.gitignore.io/api/macos,visualstudio
 # Edit at https://www.gitignore.io/?templates=macos,visualstudio
 
@@ -419,5 +416,3 @@ MigrationBackup/
 .firebase/
 
 # End of https://www.gitignore.io/api/firebase
-
-firebase-key.json

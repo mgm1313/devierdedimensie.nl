@@ -135,6 +135,7 @@ function IndexPage() {
               height="400"
               src="https://open.spotify.com/embed/artist/6vkpkUIXhm5umdAC9DWdIT"
               style={{ maxWidth: 300 }}
+              title="spotifyEmbed"
               width="100%"
             ></iframe>
           </div>
