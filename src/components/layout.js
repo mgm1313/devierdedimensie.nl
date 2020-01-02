@@ -23,7 +23,7 @@ function Layout({ children }) {
           <p className="ml-4 text-right flex items-center">
             <a
               className="no-underline text-white"
-              href="https://github.com/TECHMAUS/XXIV-Memories"
+              href="https://github.com/TECHMAUS/devierdedimensie.nl"
               rel="noopener noreferrer"
               target="_blank"
             >
