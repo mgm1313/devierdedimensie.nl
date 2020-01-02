@@ -13,14 +13,16 @@ function ColofonPage({ data }) {
     <Layout>
       <SEO title="Colofon" />
 
-      <main className="max-w-4xl 2xl:max-w-50vw mx-auto w-full px-3 md:px-8 lg:px-12 2xl:px-20 my-10">
+      <div className="absolute -z-10 inset-0 overflow-hidden">
         <img
           alt=""
-          className="absolute -z-10 lazyload"
+          className="absolute lazyload"
           id="shape-colofon"
           src={shape}
         />
+      </div>
 
+      <main className="max-w-4xl 2xl:max-w-50vw mx-auto w-full px-3 md:px-8 lg:px-12 2xl:px-20 my-10">
         <h1 className="text-3xl sm:text-4xl uppercase font-bold leading-none mb-2 tracking-wide">
           Colofon
         </h1>
@@ -38,31 +40,38 @@ function ColofonPage({ data }) {
 
         <section className="mt-8" id="Google-Vision">
           <h3 className="font-bold uppercase text-lg">Google Vision</h3>
-          De 'tags' die zichtbaar zijn onder de foto's in de gallerijen, zijn
-          automatisch gegenereerd met behulp van de{` `}
-          <OutboundLink
-            className="underline"
-            href="https://cloud.google.com/vision/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Google Vision AI
-          </OutboundLink>
-          . Meer over dit proces kan je vinden op de genoemde pagina.{` `}
-          <br />
-          Google bewaart of verkoopt deze data niet, meer hierover{` `}
-          <OutboundLink
-            className="underline"
-            href="https://cloud.google.com/vision/docs/data-usage"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            op deze pagina
-          </OutboundLink>
-          .
+          <p>
+            De 'tags' die zichtbaar zijn onder de foto's in de gallerijen, zijn
+            automatisch gegenereerd met behulp van de{` `}
+            <OutboundLink
+              className="underline"
+              href="https://cloud.google.com/vision/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Google Vision AI
+            </OutboundLink>
+            . Meer over dit proces kan je vinden op de genoemde pagina.
+            <br />
+            Google bewaart of verkoopt deze data niet, meer hierover{` `}
+            <OutboundLink
+              className="underline"
+              href="https://cloud.google.com/vision/docs/data-usage"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              op deze pagina
+            </OutboundLink>
+            .
+          </p>
+          <p className="mt-4">
+            Op dit moment kan je verder nog niks met deze tags. In de toekomst
+            zou het leuk zijn als je hier op kan filteren, of statisieken kan
+            zien. Voel je vrij om hier een pull-request voor te openen :)
+          </p>
         </section>
 
-        <section className="mt-8">
+        <section className="mt-8" id="tools">
           <h3 className="font-bold uppercase text-lg">Techniek</h3>
           Deze website is gemaakt met behulp van{` `}
           <OutboundLink
@@ -126,13 +135,15 @@ function ColofonPage({ data }) {
           .
         </section>
 
-        <section className="mt-8">
+        <section className="mt-8" id="credits">
           <h3 className="font-bold uppercase text-lg">Met bijdragen van</h3>
-          <table class="table-auto border-collapse uppercase leading-snug mt-4">
+          <table className="table-auto max-w-3xl border-collapse uppercase leading-snug mt-4">
             <tbody>
               <tr>
-                <td class="border-b pr-4 pb-3 font-light align-top">Video</td>
-                <td class="border-b pb-3 font-bold">
+                <td className="border-b pr-4 pb-3 font-light align-top">
+                  Video
+                </td>
+                <td className="border-b pb-3 font-bold">
                   <span className="text-sm font-normal">Vaste partner:</span>
                   {` `}
                   <OutboundLink
@@ -154,13 +165,17 @@ function ColofonPage({ data }) {
                   <span className="text-sm font-normal">Openingsfeest:</span>
                   {` `}
                   Toek.tv (Daniel Smith)
+                  <br />
+                  <span className="text-sm font-normal">PitStopParty:</span>
+                  {` `}
+                  Simon Pronk
                 </td>
               </tr>
               <tr>
-                <td class="border-b pr-4 py-3 font-light align-top">
+                <td className="border-b pr-4 py-3 font-light align-top">
                   Fotografie
                 </td>
-                <td class="border-b py-3 font-bold">
+                <td className="border-b py-3 font-bold">
                   <span className="text-sm font-normal">Vaste partner:</span>
                   {` `}
                   <OutboundLink
@@ -183,8 +198,38 @@ function ColofonPage({ data }) {
                 </td>
               </tr>
               <tr>
-                <td class="pr-4 pt-3 font-light align-top">Website & Design</td>
-                <td class="pt-3 font-bold">
+                <td className="border-b pr-4 py-3 font-light align-top">
+                  Muziek
+                </td>
+                <td className="border-b py-3 font-bold">
+                  <span className="text-sm font-normal">Val Omhoog:</span>
+                  {` `}
+                  <OutboundLink
+                    className="underline"
+                    href="http://www.jmrstudio.nl/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Jens Munnik
+                    <svg
+                      className="fill-current inline align-middle w-4 h-4 ml-1"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                    </svg>
+                  </OutboundLink>
+                  , Daan Grasveld & Yuan Liu
+                  <br />
+                  <span className="text-sm font-normal">Verder:</span> Albumcie
+                  (Bauke Meekes, Martin van der Schelling, Willem Limpers, Joeri
+                  Span & Lorenzo Flipse) | Alle artiesten
+                </td>
+              </tr>
+              <tr>
+                <td className="pr-4 pt-3 font-light align-top">
+                  Website & Design
+                </td>
+                <td className="pt-3 font-bold">
                   <OutboundLink
                     className="underline"
                     href="https://www.mauritsmisana.nl/"
@@ -205,7 +250,7 @@ function ColofonPage({ data }) {
           </table>
         </section>
 
-        <section className="mt-12">
+        <section className="mt-12" id="lustrum-media">
           <p>
             Met veel liefde hebben we nog aan dit project gewerkt{` `}
             <span aria-label="heart" role="img">{`\u2764`}</span> <br />

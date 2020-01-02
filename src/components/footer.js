@@ -7,7 +7,10 @@ function Footer() {
       <nav className="flex justify-between items-baseline">
         <p>
           Een project van{` `}
-          <Link className="font-bold no-underline text-white" to="/colofon">
+          <Link
+            className="font-bold no-underline text-white"
+            to="/colofon/#lustrum-media"
+          >
             Lustrum Media Commissie
           </Link>
         </p>

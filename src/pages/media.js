@@ -5,9 +5,9 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { events } from "../components/galleryConstants";
 import Img from "gatsby-image";
-import ReactPlayer from "react-player";
 
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import VideoItem from "../components/mediaPage/videoItem";
 
 import shape2D from "../assets/shapes/2d.svg";
 import shape3D from "../assets/shapes/3d.svg";
@@ -17,35 +17,64 @@ function GalleryOverviewPage({ data }) {
   return (
     <Layout>
       <SEO title="Media" />
-      <main className="max-w-6xl 2xl:max-w-75vw mx-auto w-full" id="page-media">
+
+      <div className="absolute -z-10 inset-0 overflow-hidden" id="page-media">
         <img
           alt=""
-          className="absolute -z-10 opacity-25 lazyload"
+          className="absolute opacity-25 lazyload"
           id="shape-2d"
           src={shape2D}
         />
         <img
           alt=""
-          className="absolute -z-10 opacity-25 lazyload"
+          className="absolute opacity-25 lazyload"
           id="shape-3d"
           src={shape3D}
         />
         <img
           alt=""
-          className="absolute -z-10 opacity-25 lazyload"
+          className="absolute opacity-25 lazyload"
           id="shape-4d"
           src={shape4D}
         />
+      </div>
 
+      <div className="pt-2 pb-3 sm:py-4 2xl:py-6 text-xs bigm:text-sm sm:text-base 2xl:text-lg sticky top-0 z-50 bg-white -mb-4 bigm:-mb-5 sm:-mb-8">
+        <div className="px-3 md:px-8 lg:px-12 2xl:px-20 max-w-6xl 2xl:max-w-75vw mx-auto w-full">
+          <h3 className="uppercase font-bold mb-2">Snel naar</h3>
+          <div className="flex flex-wrap justify-start -m-2 2xl:-m-3">
+            {events.map((event, i) => {
+              const shortName = event.short;
+
+              return (
+                <button
+                  className={`m-2 2xl:m-3 leading-none uppercase border-b-2 border-${event.color}`}
+                  key={i}
+                  onClick={() =>
+                    document.getElementById(shortName).scrollIntoView({
+                      behavior: `smooth`,
+                      block: `nearest`
+                    })
+                  }
+                >
+                  {event.title}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <main className="max-w-6xl 2xl:max-w-75vw mx-auto w-full px-3 md:px-8 lg:px-12 2xl:px-20">
         {events.map((event, i) => {
           const shortName = event.short;
 
           return (
             <section
-              className={`my-8 bigm:my-10 sm:my-16 xl:my-20 2xl:my-32 px-3 md:px-8 lg:px-12 2xl:px-20 ${
+              className={`my-8 bigm:my-10 sm:my-16 xl:my-20 ${
                 i % 2 !== 0 ? `text-right` : ``
               }`}
-              id={event.title.toLowerCase().replace(/ /g, `_`)}
+              id={shortName}
               key={i}
             >
               <h2
@@ -96,21 +125,7 @@ function GalleryOverviewPage({ data }) {
                   }`}
                 >
                   {event.videos.map((video, i) => (
-                    <li
-                      className={`aspect-ratio-box aspect-ratio-${video.ratio} flex-none w-full md:w-1/3 lg:w-1/4 p-2px`}
-                      key={i}
-                    >
-                      <ReactPlayer
-                        className="h-full"
-                        controls={true}
-                        height="100%"
-                        light={true}
-                        playing={true}
-                        playsinline={false}
-                        url={`https://www.youtube.com/watch?v=` + video.id}
-                        width="100%"
-                      />
-                    </li>
+                    <VideoItem key={i} video={video} />
                   ))}
 
                   {data[shortName].edges.map(gallery => {
@@ -125,7 +140,7 @@ function GalleryOverviewPage({ data }) {
                       >
                         <Link to={gallery.node.frontmatter.path}>
                           <div
-                            className={`shadow hover:shadow-md relative flex justify-between items-end bg-transparent text-white p-1 lg:p-2 h-full text-left uppercase font-bold tracking-wider leading-none`}
+                            className={`shadow hover:shadow-md relative flex justify-between overflow-hidden items-end bg-transparent text-white p-1 lg:p-2 h-full text-left uppercase font-bold tracking-wider leading-none`}
                           >
                             <span
                               className="gallery-item-title text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl"

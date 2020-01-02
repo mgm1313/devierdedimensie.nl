@@ -5,6 +5,15 @@
 body {
   font-variant-ligatures: no-common-ligatures;
   font-display: swap;
+  overflow-x: hidden;
+}
+
+.safe-m-t {
+  margin-top: env(safe-area-inset-top);
+}
+
+.safe-m-b {
+  margin-bottom: env(safe-area-inset-bottom);
 }
 
 #shape-1d {
@@ -87,6 +96,12 @@ body {
     top: 20%;
     left: -35%;
     transform: scale(1.1);
+  }
+}
+
+@screen sm {
+  iframe.spotify-embed {
+    max-width: 350px;
   }
 }
 
@@ -181,12 +196,13 @@ body {
   background-size: 18px;
 }
 
-.gallery-item:hover .featured-image {
-  filter: grayscale(100%) brightness(0.8) blur(2px);
+.gallery-item .featured-image {
+  transition: all 150ms ease-in-out;
 }
 
-.gallery-item:hover .gallery-item-title {
-  transform: translate3d(0px, -1px, 0px);
+.gallery-item:hover .featured-image {
+  filter: blur(2px);
+  transform: scale(1.05);
 }
 
 .xxiv-count-label {
@@ -213,6 +229,7 @@ body {
 @screen bigm {
   .text-columns {
     column-count: 2;
+    column-gap: 1.25em;
   }
 
   .ril-toolbar-left.ril__toolbarLeftSide {

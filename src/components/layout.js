@@ -7,7 +7,7 @@ import BackToTopButton from "../components/backToTop";
 
 function Layout({ children }) {
   return (
-    <div className="relative flex flex-col font-din min-h-screen overflow-hidden">
+    <div className="relative flex flex-col font-din min-h-screen">
       <Header />
 
       {children}

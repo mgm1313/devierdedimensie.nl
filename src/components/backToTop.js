@@ -3,7 +3,7 @@ import ScrollToTop from "react-scroll-up";
 import arrowTop from "../assets/scroll-arrow-top.svg";
 
 const BackToTopButton = () => (
-  <ScrollToTop className="z-10" showUnder={300}>
+  <ScrollToTop showUnder={300} style={{ zIndex: 50 }}>
     <button
       aria-label="Back to Top"
       className="shadow bg-contain overflow-hidden rounded-none"

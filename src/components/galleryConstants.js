@@ -7,9 +7,7 @@ export const events = [
       {
         title: `Aftermovie`,
         id: `1AE-asGI-tc`,
-        ratio: `16_9`,
-        url: `https://drive.google.com/uc?export=download&id=1F9pJ6ORALkyO22rr56v4C8ZbtBJkLMbF`,
-        size: `149,2 MB`
+        ratio: `16_9`
       }
     ],
     downloads: [
@@ -31,6 +29,7 @@ export const events = [
     color: `gala`,
     videos: [
       {
+        title: `Aftermovie`,
         id: `X1sTi25LICA`,
         ratio: `21_9`
       }
@@ -54,6 +53,12 @@ export const events = [
     color: `wispo`,
     videos: [
       {
+        title: `PitStopParty Roda JC`,
+        id: `kl6zrdr48Ks`,
+        ratio: `16_9`
+      },
+      {
+        title: `Aftermovie`,
         id: `xk_WgpnSfvY`,
         ratio: `21_9`
       }
@@ -63,6 +68,11 @@ export const events = [
         title: `Alle foto's`,
         url: `https://drive.google.com/uc?export=download&id=10M0xR7ga1JGhu8tyoZw8qJ36P6ZGh8qu`,
         size: `8,93 GB`
+      },
+      {
+        title: `Video: PitStopParty`,
+        url: `https://drive.google.com/uc?export=download&id=1ZeIUpb2BugUZVvhIVVms7SKqyaHN5ygf`,
+        size: `72,2 MB`
       },
       {
         title: `Video: Aftermovie`,
@@ -77,6 +87,7 @@ export const events = [
     color: `lustrumweek`,
     videos: [
       {
+        title: `Aftermovie`,
         id: `qqUn8B5z0z0`,
         ratio: `21_9`
       }
@@ -100,6 +111,7 @@ export const events = [
     color: `theater`,
     videos: [
       {
+        title: `Aftermovie`,
         id: `xs7GgVPXuus`,
         ratio: `16_9`
       }
@@ -123,10 +135,12 @@ export const events = [
     color: `piekweek`,
     videos: [
       {
+        title: `Locatie Bekendmaking`,
         id: `9qhZK-F1-xE`,
         ratio: `16_9`
       },
       {
+        title: `Aftermovie`,
         id: `3bObBCtdADU`,
         ratio: `21_9`
       }
@@ -155,6 +169,7 @@ export const events = [
     color: `black`,
     videos: [
       {
+        title: `Lustrumboek Onthulling`,
         id: `nnA1spGM-xY`,
         ratio: `16_9`
       }
@@ -166,7 +181,7 @@ export const events = [
         size: `691,6 MB`
       },
       {
-        title: `Video: Aftermovie`,
+        title: `Video: Onthulling`,
         url: `https://drive.google.com/uc?export=download&id=1-YIedoum1jjEScRkrSVAd3cL7AuZG5Vl`,
         size: `205,1 MB`
       }

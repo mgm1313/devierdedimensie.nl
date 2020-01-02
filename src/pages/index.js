@@ -17,14 +17,16 @@ function IndexPage() {
         title="Home"
       />
 
-      <main className="flex flex-wrap mb-3 bigm:mb-8 lg:mb-12 mt-2 bigm:mt-4 lg:mt-8 w-full">
+      <div className="absolute -z-10 inset-0 overflow-hidden">
         <img
           alt=""
-          className="absolute -z-10 opacity-50"
+          className="absolute opacity-50 lazyload"
           id="shape-1d"
           src={shape1D}
         />
+      </div>
 
+      <main className="flex flex-wrap mb-3 bigm:mb-8 lg:mb-12 mt-2 bigm:mt-4 w-full">
         <section className="w-full mb-4 px-3 md:px-8 lg:px-12 2xl:px-20">
           <div className="relative aspect-ratio-box aspect-ratio-21_9 w-full border-4 border-black">
             <YouTubePlayer
@@ -125,18 +127,17 @@ function IndexPage() {
             </div>
           </div>
 
-          <div className="w-full sm:w-1/3 text-right mb-8">
+          <div className="w-full sm:w-1/3 sm:text-right mb-8">
             <h2 className="mb-2 uppercase font-bold text-2xl leading-none tracking-wide">
               Luister naar de 4<sup className="lowercase">e</sup> dimensie!
             </h2>
             <iframe
               allow="encrypted-media"
               allowtransparency="true"
-              className="ml-auto mr-0"
+              className="spotify-embed sm:ml-auto mr-0"
               frameBorder="0"
               height="400"
-              src="https://open.spotify.com/embed/artist/6vkpkUIXhm5umdAC9DWdIT"
-              style={{ maxWidth: 300 }}
+              src="https://open.spotify.com/embed/album/6WA6NormYDlTndkWpR0ZHD"
               title="spotifyEmbed"
               width="100%"
             ></iframe>

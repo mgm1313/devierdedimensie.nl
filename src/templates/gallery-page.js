@@ -13,7 +13,7 @@ import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 function GalleryPage({ data, pageContext }) {
   const [lockScroll, setlockScroll] = useState(false);
-  const [hideCaption, sethideCaption] = useState(false);
+  const [hideCaption, sethideCaption] = useState(true);
 
   const { frontmatter } = data.markdownRemark;
   const { next, prev } = pageContext;
@@ -170,9 +170,12 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
     <Layout>
       <SEO title={pageTitel} />
 
-      <main className="mb-3 bigm:mb-8 lg:mb-12 mt-2 bigm:mt-4 lg:mt-8 w-full px-3 md:px-8 lg:px-12 2xl:px-20">
-        <nav aria-label="Breadcrumb" className="font-light uppercase my-8">
-          <ol className="list-none p-0 inline-flex leading-tight">
+      <main className="relative mb-3 bigm:mb-8 lg:mb-12 w-full px-3 md:px-8 lg:px-12 2xl:px-20">
+        <nav
+          aria-label="Breadcrumb"
+          className="safe-m-t sticky top-0 z-20 font-light text-xs bigm:text-sm 2xl:text-base uppercase"
+        >
+          <ol className="list-none py-3 2xl:py-4 pr-3 2xl:pr-4 inline-flex leading-tight bg-white">
             <li className="flex items-center">
               <svg
                 className="text-gray-700 fill-current w-3 h-3 mr-1"
@@ -181,7 +184,7 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
               >
                 <path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z" />
               </svg>
-              <Link to="/media">Terug naar media</Link>
+              <Link to="/media">Terug naar overzicht</Link>
             </li>
           </ol>
         </nav>
@@ -220,7 +223,10 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
               onCloseRequest={() => {
                 setLightboxController({ isOpen: false });
                 setlockScroll(false);
-                document.getElementById(id[lbCurrent]).scrollIntoView();
+                document.getElementById(id[lbCurrent]).scrollIntoView({
+                  behavior: `smooth`,
+                  block: `nearest`
+                });
               }}
               onMoveNextRequest={() =>
                 setLightboxController({
@@ -268,9 +274,15 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
             </div>
           ))}
         </section>
-        <nav aria-label="Breadcrumb" className="font-light uppercase my-8">
+        <nav
+          aria-label="Breadcrumb"
+          className="sticky bottom-0 z-20 font-light uppercase text-xs bigm:text-sm 2xl:text-base"
+        >
           <ol className="list-none p-0 flex justify-between leading-tight">
-            <li className="flex items-center mr-4">
+            <li
+              className={`safe-m-b flex items-center pr-3 2xl:pr-4 py-3 2xl:py-4 ${prev &&
+                `bg-white`}`}
+            >
               {prev && (
                 <>
                   <svg
@@ -286,7 +298,10 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
                 </>
               )}
             </li>
-            <li className="flex items-center text-right">
+            <li
+              className={`safe-m-b flex items-center text-right pl-3 2xl:pl-4 py-3 2xl:py-4 ${next &&
+                `bg-white`}`}
+            >
               {next && (
                 <>
                   <Link to={next.frontmatter.path}>
