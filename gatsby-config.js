@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `De Vierde Dimensie - 24e Lustrum der KSV Sanctus Virgilius`,
     short_name: `XXIV memories`,
-    description: `Herbeleef het 24e Lustrum der Katholieke Studentenvereniging Sanctus Virgilius, met het thema De Vierde Dimensie!`,
+    description: `Herbeleef De Vierde Dimensie, hét thema van het 24e Lustrum der Katholieke Studentenvereniging Sanctus Virgilius. Hier vind je alle media: foto's, video's en muziek van het lustrum!`,
     author: `@techmaus`
   },
   plugins: [
