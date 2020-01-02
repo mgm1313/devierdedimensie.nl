@@ -4,13 +4,24 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    title: `XXIV memories - 24e Lustrum der KSV Sanctus Virgilius`,
+    title: `De Vierde Dimensie - 24e Lustrum der KSV Sanctus Virgilius`,
     short_name: `XXIV memories`,
     description: `Herbeleef het 24e Lustrum der Katholieke Studentenvereniging Sanctus Virgilius, met het thema De Vierde Dimensie!`,
     author: `@techmaus`
   },
   plugins: [
     `gatsby-plugin-react-helmet-async`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: `UA-51532513-6`,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -31,6 +42,13 @@ module.exports = {
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/gallery_s-markdown`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`
       }
     },
     `gatsby-transformer-remark`,

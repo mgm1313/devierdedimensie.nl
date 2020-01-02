@@ -9,6 +9,7 @@ import parse from "html-react-parser";
 
 import ScrollLock from "react-scrolllock";
 import AnimateHeight from "react-animate-height";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 function GalleryPage({ data, pageContext }) {
   const [lockScroll, setlockScroll] = useState(false);
@@ -53,13 +54,13 @@ function GalleryPage({ data, pageContext }) {
   const lbNext = (lbCurrent + 1) % nbrImages;
 
   const downloadBtn = (
-    <a download href={downloadUrl[lbCurrent]}>
+    <OutboundLink download href={downloadUrl[lbCurrent]}>
       <button
         aria-label="Download original"
         className="ril__downloadButton ril-toolbar__item__child ril__toolbarItemChild ril__builtinButton"
         type="button"
       ></button>
-    </a>
+    </OutboundLink>
   );
 
   const flagMail = `lustrum-media@googlegroups.com`;
@@ -74,7 +75,7 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
   `.trim();
 
   const flagBtn = (
-    <a
+    <OutboundLink
       href={encodeURI(
         `mailto:${flagMail}?subject=${flagSubject}&body=${flagBody}`
       )}
@@ -84,7 +85,7 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
         className="ril__flagButton ril-toolbar__item__child ril__toolbarItemChild ril__builtinButton"
         type="button"
       ></button>
-    </a>
+    </OutboundLink>
   );
 
   const infoBtn = (

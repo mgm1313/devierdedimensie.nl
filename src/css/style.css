@@ -53,6 +53,43 @@ body {
   transform: rotate(15deg);
 }
 
+#shape-colofon {
+  top: 30%;
+  left: -20%;
+  width: 100%;
+  transform: scale(3.5);
+  max-width: unset;
+  opacity: .2;
+}
+
+@screen sm {
+  #shape-colofon {
+    top: 50%;
+  }
+}
+
+@screen md {
+  #shape-colofon {
+    top: 40%;
+    transform: scale(2);
+  }
+}
+
+@screen xl {
+  #shape-colofon {
+    left: -27%;
+    transform: scale(1.6);
+  }
+}
+
+@screen 2xl {
+  #shape-colofon {
+    top: 20%;
+    left: -35%;
+    transform: scale(1.1);
+  }
+}
+
 .text-columns p:first-of-type::first-letter {
   @apply leading-none font-medium float-left pr-1;
   font-size: 2.6rem;

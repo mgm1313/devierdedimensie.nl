@@ -5,6 +5,8 @@ import SEO from "../components/seo";
 import { Link } from "gatsby";
 import YouTubePlayer from "react-player/lib/players/YouTube";
 
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+
 import shape1D from "../assets/shapes/1d.svg";
 
 function IndexPage() {
@@ -41,7 +43,7 @@ function IndexPage() {
               <span className="mb-1 sm:mb-0 block text-gray-700 text-xs xl:text-sm">
                 Download de originele video
               </span>
-              <a
+              <OutboundLink
                 className="bg-transparent sm:hover:bg-black text-gray-900 sm:hover:text-white font-semibold sm:py-1/2 xl:py-1 sm:px-2 xl:px-3 2xl:px-4 sm:border-2 sm:border-black hover:border-transparent inline-flex items-center"
                 href="https://drive.google.com/uc?export=download&id=1u_qM4jM4AraBBhxZ9t0Zjw3bz3qtNKKh"
                 rel="noopener noreferrer"
@@ -58,7 +60,7 @@ function IndexPage() {
                   {`Lustrum Aftermovie `}
                   <span className="text-xs xl:text-sm">(12,75&nbsp;GB)</span>
                 </span>
-              </a>
+              </OutboundLink>
             </div>
 
             <div className="justify-end text-right ml-3">

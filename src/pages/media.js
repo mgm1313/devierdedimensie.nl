@@ -7,6 +7,8 @@ import { events } from "../components/galleryConstants";
 import Img from "gatsby-image";
 import ReactPlayer from "react-player";
 
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+
 import shape2D from "../assets/shapes/2d.svg";
 import shape3D from "../assets/shapes/3d.svg";
 import shape4D from "../assets/shapes/4d.svg";
@@ -18,19 +20,19 @@ function GalleryOverviewPage({ data }) {
       <main className="max-w-6xl 2xl:max-w-75vw mx-auto w-full" id="page-media">
         <img
           alt=""
-          className="absolute -z-10 opacity-25"
+          className="absolute -z-10 opacity-25 lazyload"
           id="shape-2d"
           src={shape2D}
         />
         <img
           alt=""
-          className="absolute -z-10 opacity-25"
+          className="absolute -z-10 opacity-25 lazyload"
           id="shape-3d"
           src={shape3D}
         />
         <img
           alt=""
-          className="absolute -z-10 opacity-25"
+          className="absolute -z-10 opacity-25 lazyload"
           id="shape-4d"
           src={shape4D}
         />
@@ -61,7 +63,7 @@ function GalleryOverviewPage({ data }) {
 
                 <div className="-mx-1">
                   {event.downloads.map((download, i) => (
-                    <a
+                    <OutboundLink
                       className={`bg-transparent sm:hover:bg-${event.color} text-gray-900 sm:hover:text-white font-semibold sm:py-1/2 xl:py-1 sm:px-2 xl:px-3 2xl:px-4 mx-2 sm:mx-1 sm:border-2 sm:border-${event.color} hover:border-transparent inline-flex items-center`}
                       href={download.url}
                       key={i}
@@ -82,7 +84,7 @@ function GalleryOverviewPage({ data }) {
                           ({download.size})
                         </span>
                       </span>
-                    </a>
+                    </OutboundLink>
                   ))}
                 </div>
               </div>
