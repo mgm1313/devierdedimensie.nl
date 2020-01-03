@@ -73,7 +73,7 @@ module.exports = {
           /theater$/,
           /piekweek$/,
           /^ril/,
-          /^#shape/
+          /^shape/
         ]
       }
     },
