@@ -72,7 +72,8 @@ module.exports = {
           /lustrumweek$/,
           /theater$/,
           /piekweek$/,
-          /^ril/
+          /^ril/,
+          /^#shape/
         ]
       }
     },
