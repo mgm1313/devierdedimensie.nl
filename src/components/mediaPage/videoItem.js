@@ -19,14 +19,14 @@ class VideoItem extends Component {
         <span
           className={`${
             this.state.showTitle ? `visible` : `invisible`
-          } gallery-item-title left-0 bottom-0 p-3 absolute text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-left text-white uppercase font-bold tracking-wider leading-none pointer-events-none flex items-baseline`}
+          } gallery-item-title left-0 bottom-0 p-3 absolute text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-left text-white uppercase font-bold tracking-wider leading-none pointer-events-none`}
           style={{
             wordBreak: `break-word`,
             textShadow: `0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08)`
           }}
         >
           <svg
-            className="fill-current inline-block h-3 w-3 mr-2 sm:h-4 sm:w-4 lg:mr-3"
+            className="fill-current inline-block h-3 w-3 mr-2 sm:h-4 sm:w-4 align-baseline"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
