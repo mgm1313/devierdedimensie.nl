@@ -82,7 +82,17 @@ function ColofonPage({ data }) {
           >
             Gatsby
           </OutboundLink>
-          . Hosting vind plaats via{` `}
+          . En opgemaakt via het CSS framework{` `}
+          <OutboundLink
+            className="underline"
+            href="https://tailwindcss.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            TailwindCSS
+          </OutboundLink>
+          . <br />
+          Hosting vind plaats via{` `}
           <OutboundLink
             className="underline"
             href="https://zeit.co/"
@@ -91,8 +101,7 @@ function ColofonPage({ data }) {
           >
             Zeit Now
           </OutboundLink>
-          . <br />
-          Foto's worden gehost via{` `}
+          . Foto's worden gehost via{` `}
           <OutboundLink
             className="underline"
             href="https://firebase.google.com/products/storage"
