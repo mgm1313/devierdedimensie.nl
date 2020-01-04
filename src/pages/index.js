@@ -21,8 +21,8 @@ function IndexPage() {
         <img
           alt=""
           className="absolute opacity-50 lazyload"
+          data-src={shape1D}
           id="shape-1d"
-          src={shape1D}
         />
       </div>
 
@@ -134,10 +134,10 @@ function IndexPage() {
             <iframe
               allow="encrypted-media"
               allowtransparency="true"
-              className="spotify-embed sm:ml-auto mr-0"
+              className="spotify-embed sm:ml-auto mr-0 lazyload"
+              data-src="https://open.spotify.com/embed/album/6WA6NormYDlTndkWpR0ZHD"
               frameBorder="0"
               height="400"
-              src="https://open.spotify.com/embed/album/6WA6NormYDlTndkWpR0ZHD"
               title="spotifyEmbed"
               width="100%"
             ></iframe>

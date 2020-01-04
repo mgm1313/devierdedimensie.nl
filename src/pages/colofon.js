@@ -17,8 +17,8 @@ function ColofonPage({ data }) {
         <img
           alt=""
           className="absolute lazyload"
+          data-src={shape}
           id="shape-colofon"
-          src={shape}
         />
       </div>
 

@@ -24,8 +24,8 @@ function GalleryOverviewPage({ data }) {
           <img
             alt=""
             className="absolute opacity-25 lazyload"
+            data-src={shapes[i - 2]}
             id={`shape-${i}d`}
-            src={shapes[i - 2]}
           />
         ))}
       </div>
