@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 
 function SEO({ description, lang, meta, keywords, title }) {
   const { site } = useStaticQuery(graphql`
-    query DefaultSEOQuery {
+    query SEOQuery {
       site {
         siteMetadata {
           title
@@ -74,8 +74,8 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  keywords: [],
+  lang: `nl`,
+  keywords: [`virgiel`, `de vierde dimensie`, `lustrum`],
   meta: []
 };
 
