@@ -22,6 +22,7 @@ function GalleryOverviewPage({ data }) {
       <div className="absolute -z-10 inset-0 overflow-hidden" id="page-media">
         {[2, 3, 4].map(i => (
           <img
+            key={i}
             alt=""
             className="absolute opacity-25 lazyload"
             data-src={shapes[i - 2]}

@@ -1,10 +1,9 @@
 // See https://tailwindcss.com/docs/configuration for details
+// tailwind.config.js
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   theme: {
-    fontFamily: {
-      din: [`din-2014`, `sans-serif`]
-    },
     screens: {
       bigm: `410px`,
       sm: `640px`,
@@ -14,6 +13,9 @@ module.exports = {
       "2xl": `1600px`
     },
     extend: {
+      fontFamily: {
+        din: [`din-2014`, ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         gala: `#E50074`,
         wispo: `#4BB9EF`,
@@ -52,5 +54,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [require("@tailwindcss/ui")],
 };

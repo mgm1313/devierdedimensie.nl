@@ -110,8 +110,8 @@ function IndexPage() {
                 ver buiten Delft, haar 120-jarig bestaan gevierd.
               </p>
               <p className="mb-4">
-                Om al deze herinneringen te vereeuwigen zijn er een hoop foto's,
-                video's en teksten gemaakt en geschreven. Vereeuwigd in zowel
+                Om al deze herinneringen te vereeuwigen zijn er een hoop foto&quot;s,
+                video&quot;s en teksten gemaakt en geschreven. Vereeuwigd in zowel
                 een analoog lustrumboek, als digitaal op deze website.
               </p>
               <p className="mb-4">
@@ -133,7 +133,7 @@ function IndexPage() {
             </h2>
             <iframe
               allow="encrypted-media"
-              allowtransparency="true"
+              allowTransparency="true"
               className="spotify-embed sm:ml-auto mr-0 lazyload"
               data-src="https://open.spotify.com/embed/album/6WA6NormYDlTndkWpR0ZHD"
               frameBorder="0"

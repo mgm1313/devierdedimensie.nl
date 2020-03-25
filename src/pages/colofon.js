@@ -41,7 +41,7 @@ function ColofonPage({ data }) {
         <section className="mt-8" id="Google-Vision">
           <h3 className="font-bold uppercase text-lg">Google Vision</h3>
           <p>
-            De 'tags' die zichtbaar zijn onder de foto's in de gallerijen, zijn
+            De &quot;tags&quot; die zichtbaar zijn onder de foto&quot;s in de gallerijen, zijn
             automatisch gegenereerd met behulp van de{` `}
             <OutboundLink
               className="underline"
@@ -101,7 +101,7 @@ function ColofonPage({ data }) {
           >
             Zeit Now
           </OutboundLink>
-          . Foto's worden gehost via{` `}
+          . Foto&quot;s worden gehost via{` `}
           <OutboundLink
             className="underline"
             href="https://firebase.google.com/products/storage"
@@ -110,7 +110,7 @@ function ColofonPage({ data }) {
           >
             Cloud Storage for Firebase
           </OutboundLink>
-          , video's via{` `}
+          , video&quot;s via{` `}
           <OutboundLink
             className="underline"
             href="https://www.youtube.com/channel/UCskGv0_BmsrLEFuZJ83IEaA"

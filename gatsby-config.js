@@ -52,7 +52,18 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-postcss`,
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)(`./tailwind.config.js`),
+          require(`autoprefixer`),
+          ...(process.env.NODE_ENV === "production"
+            ? [require(`cssnano`)]
+            : []),
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
@@ -102,6 +113,10 @@ module.exports = {
           {
             // this type will become `allWorkshop` in graphql
             type: `images`,
+
+            // probably don't want your entire database, use the query option
+            // to limit however you'd like
+            query: ref => ref.limitToLast(10),
 
             // the path to get the records from
             path: `images`
