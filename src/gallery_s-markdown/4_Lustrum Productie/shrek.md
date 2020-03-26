@@ -1,8 +1,9 @@
 ---
-title: "Lustrum Productie Shrek"
-path: "/media/lustrum-productie-shrek"
 category: "images/Lustrum Productie"
+title: "Shrek"
+slug: "/media/lustrum-productie-shrek"
+eventID: "theater"
 featuredImage: "shrek.jpg"
-theme: "theater"
+date: "2018-06-11"
 sort: 400
 ---

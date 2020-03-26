@@ -1,8 +1,9 @@
 ---
-title: "Piekweek/&#8203;Familiedag/&#8203;Zaal"
-path: "/media/piekweek/familiedag/zaal"
 category: "images/Piekweek/Familiedag/Zaal"
+title: "Familiedag/&#8203;Zaal"
+slug: "/media/piekweek/familiedag/zaal"
+eventID: "piekweek"
 featuredImage: "zaal.jpg"
-theme: "piekweek"
+date: "2018-07-17"
 sort: 541
 ---

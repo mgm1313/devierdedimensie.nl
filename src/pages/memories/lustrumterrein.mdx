@@ -1,0 +1,112 @@
+---
+slug: /memories/lustrumterrein
+eventID: piekweek
+title: Het Lustrumterrein
+commiteePhoto: "../../images/Terrein_praesidium.jpg"
+---
+
+export const commissie = [
+  {
+    function: "Voorzitter",
+    name: "Tom Hoppenbrouwer",
+  },
+  {
+    function: "Secretaris",
+    name: "Eva van Houwelingen",
+  },
+  {
+    function: "Penningmeester",
+    name: "Victor Poorte",
+  },
+  {
+    function: "Commissaris Constructies",
+    name: "Jurre Marijnissen",
+  },
+  {
+    function: "Commissaris Inventaris",
+    name: "Elske van Leeuwen",
+  },
+  {
+    function: "Commissaris Installaties",
+    name: "Jelle Klein",
+  },
+];
+
+import { graphql } from "gatsby";
+import { getColorByID } from "../../components/utils";
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { slug: { eq: "/memories/lustrumterrein" } }) {
+      fileAbsolutePath
+      frontmatter {
+        commiteePhoto {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<Introduction
+  color={getColorByID(props.pageContext.frontmatter.eventID)}
+  title={props.pageContext.frontmatter.title}
+>
+  Het Terrein Praesidium was verantwoordelijk voor het lustrumterrein gelegen
+  aan de Schoemakerstraat 340. Met zijn zessen hebben ze een kwartaal part-time
+  en een kwartaal full-time er alles aan gedaan om het terrein een volledige
+  make-over te geven. Het lustrumterrein is speciaal voor de piekweek van het
+  lustrum omgebouwd tot een groot feestterrein dat door ongeveer 2500 bezoekers
+  per dag werd bezocht. Het terrein aan de Schoemakerstraat is normaal gesproken
+  de thuisbasis van de Delfste korfbalvereniging Fortuna.
+</Introduction>
+
+<Committee
+  commiteeName="Terrein Praesidium"
+  members={commissie}
+  image={props.data.mdx.frontmatter.commiteePhoto}
+/>
+
+<MediaHighlighter event={props.pageContext.frontmatter.eventID} />
+
+## Vanuit het Terrein Praesidium
+
+Dit verhaal begint ergens midden in december 2017. Toen begon het verhaal van
+een groep van zes man die een half jaar lang keihard bezig is geweest om een
+gemoedelijke korfbalvereniging genaamd Fortuna om te toveren tot een bruisend
+terrein waar 2000 Virgilianen het dak eraf hebben geblazen, om dit terrein
+vervolgens weer af te leveren alsof er niets is gebeurd.
+
+<Blockquote align="right">
+  "Liefdadig als wij zijn hebben we deze keet, die wij tot ‘Dikke Nico’ hebben
+  gedoopt gered van zijn roemloze einde."
+</Blockquote>
+
+De eerste en voor ons misschien wel de fijnste bijdrage aan het terrein werd
+al snel afgeleverd, in de vorm van het grootste Ikea bouwpakket dat ik
+waarschijnlijk ooit zal zien. Op de spoorzone stond namelijk nog een
+schaftkeet van 30x6 m te verpieteren, die binnen afzienbare tijd zou worden
+gesloopt. Liefdadig als wij zijn hebben we deze keet, die wij tot ‘Dikke Nico’
+hebben gedoopt gered van zijn roemloze einde.
+
+Wat me vrij lang bij zal blijven is het feit dat we op dat moment het terrein
+nog deelden met Fortuna. Zo liep er nog dagelijks allemaal klein grut rond om
+lekker te gaan trainen, terwijl bij ons de tap vanaf een uur of 5 overuren
+draaide. Daarnaast wil ik graag ook een momentje stilte aanvragen voor
+opperbeunhaas Jurre die een groot deel van de voorbereidingen van de zijlijn
+heeft moeten aanschouwen, in een scootmobiel, omdat hij besloot zijn enkel te
+breken. Het beeld van de aangeschoten man met studentikoze lichaamsbouw in een
+scootmobiel zal veel Fortuna-leden nog lang bij blijven, schat ik zo. - Tom
+Hoppenbrouwer
+
+<Blockquote align="left">
+  "Zo liep er nog dagelijks allemaal klein grut rond om lekker te gaan trainen,
+  terwijl bij ons de tap vanaf een uur of 5 overuren draaide."
+</Blockquote>
+
+<Feedback filePath={props.data.mdx.fileAbsolutePath} />

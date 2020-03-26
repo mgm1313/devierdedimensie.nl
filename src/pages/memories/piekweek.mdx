@@ -1,0 +1,102 @@
+---
+slug: /memories/piekweek
+eventID: piekweek
+title: De Piekweek
+commiteePhoto: "../../images/Piekweek_commissie.jpg"
+---
+
+export const commissie = [
+  {
+    function: "Voorzitter/extern",
+    name: "Emma van der Staay",
+  },
+  {
+    function: "Penningmeester",
+    name: "Peter Joon",
+  },
+  {
+    function: "Commissaris Intern/Promo",
+    name: "Quentin van Driel",
+  },
+  {
+    function: "Terrein Ontwerp",
+    name: "Maartje Hoogeveen",
+  },
+  {
+    function: "Terrein Logistiek/Secretaris",
+    name: "Pieter Pinson",
+  },
+  {
+    function: "Commissaris Artiesten & Activiteiten",
+    name: "Bos Rosenboom",
+  },
+];
+
+import { graphql } from "gatsby";
+import { getColorByID } from "../../components/utils";
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { slug: { eq: "/memories/piekweek" } }) {
+      fileAbsolutePath
+      frontmatter {
+        commiteePhoto {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<Introduction
+  color={getColorByID(props.pageContext.frontmatter.eventID)}
+  title={props.pageContext.frontmatter.title}
+>
+  De Piekweek, de grote finale van het 24e lustrumjaar. Het tien dagen durende
+  festijn begon met een piekweekend in Duitsland op het kloostercomplex van
+  Kloster Graefenthal. Na het terugkeren naar thuisbasis Delft was de volgende 8
+  dagen het volledig tot een lustrumterrein omgebouwde terrein van
+  korfbalvereniging Fortuna het epicentrum van alle feesten. De uiteenlopende
+  mogelijkheden van het gebruik van het terrein zijn dan ook volledig benut. De
+  ene dag stond er een volle tribune voor een cabaretshow, de volgende dag
+  stonden er 2000 mensen te dansen op festival deuntjes en de andere dag stonden
+  er lange tafels voor een chique stress diner. Het voelde kort maar wat is er
+  veel gebeurd!
+</Introduction>
+
+<Committee
+  commiteeName="Piekweek Commissie"
+  members={commissie}
+  image={props.data.mdx.frontmatter.commiteePhoto}
+/>
+
+<MediaHighlighter event={props.pageContext.frontmatter.eventID} />
+
+## Vanuit de Piekweek commissie
+
+Terwijl we nog verzonken waren in de voorbereidingen, brak de Piekweek en
+vooral het weekend ineens aan. Als een roes heb ik de hele week ervaren. Ik
+was overal bij en dat was ontzettend leuk! Vooral het openingsfeest staat me
+nog goed bij. Ineens stonden er bijna 2000 bezoekers op ons terrein, te
+popelen om de dansvloer uit te proberen. Vol adrenaline rende ik rond met mijn
+commissie om de laatste dingen op orde te brengen en met een tevreden gevoel
+fietste ik pas om 8:30 uur ’s ochtends de volgende dag weer naar huis. Nu
+kunnen we de rest van de week ook aan! - Emma
+
+<Blockquote align="right">
+  "Ineens stonden er bijna 2000 bezoekers op ons terrein, te popelen om de
+  dansvloer uit te proberen."
+</Blockquote>
+
+Om elke ochtend over de boulevard te lopen in het opkomende zonnetje en daar
+nog een handjevol strijdende Virgilianen te zien, die simpelweg niet naar huis
+wilden omdat ze het te mooi vonden en dan vervolgens in de middag diezelfde
+Virgilianen weer los te zien gaan bij de volgende activiteit was prachtig om
+te zien. - Peter
+
+<Feedback filePath={props.data.mdx.fileAbsolutePath} />

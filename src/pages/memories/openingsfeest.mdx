@@ -1,0 +1,91 @@
+---
+slug: /memories/openingsfeest
+eventID: opening
+title: Het openingsfeest
+commiteePhoto: "../../images/Branding_commissie.jpg"
+---
+
+export const commissie = [
+  {
+    function: "",
+    name: "Vera van Maaren",
+  },
+  {
+    function: "",
+    name: "Kees Fritschy",
+  },
+  {
+    function: "",
+    name: "Freija Rozendaal",
+  },
+  {
+    function: "",
+    name: "Ruben den Uyl",
+  },
+];
+
+import { graphql } from "gatsby";
+import { getColorByID } from "../../components/utils";
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { slug: { eq: "/memories/openingsfeest" } }) {
+      fileAbsolutePath
+      frontmatter {
+        commiteePhoto {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<Introduction
+  color={getColorByID(props.pageContext.frontmatter.eventID)}
+  title={props.pageContext.frontmatter.title}
+>
+  Lustrum Branding was verantwoordelijk voor de basis van het 24e Lustrum. Vanaf
+  februari 2017 is Branding bezig geweest met het bedenken van het thema, het
+  maken van de huisstijl, het lustrumgevoel neerzetten, het organiseren van de
+  themabekendmaking en als laatste het openingsfeest van het 24e lustrum. Vanaf
+  het einde van de zomervakantie is aan de opening gewerkt. Met geleidelijk aan
+  steeds meer verschillende groeperingen en commissies is er bijgedragen aan de
+  feestelijke opening van het lustrum.
+</Introduction>
+
+<Committee
+  commiteeName="Branding Commissie"
+  members={commissie}
+  image={props.data.mdx.frontmatter.commiteePhoto}
+/>
+
+<MediaHighlighter event={props.pageContext.frontmatter.eventID} />
+
+## Vanuit de Branding Commissie
+
+Wat is nou iets dat je waarschijnlijk maar één keer in je leven gaat doen?
+Voor veel mensen is dat een lustrum van Virgiel meemaken, maar als Kikker uit
+2012 zou dit natuurlijk al het tweede lustrum voor mij zijn. Een huisstijl
+neerzetten voor een lustrum is hoogstwaarschijnlijk wél iets wat ik maar één
+keer in mijn leven ga doen. Het geluk bestond dat wij in ons midden zelfs niet
+1, maar 2 ‘lustrumfeuten’ uit 2012 hadden zodat we ergens op konden bouwen met
+de brainstorms over het thema.
+
+<Blockquote align="right">
+  "Een huisstijl neerzetten voor een lustrum is hoogstwaarschijnlijk wél iets
+  wat ik maar één keer in mijn leven ga doen."
+</Blockquote>
+
+Het was dus aan ons de taak om na te denken over de lustrum gedachte van het
+24e lustrum van KSV Sanctus Virgilius. De grote vraag is; Wat is nou een
+lustrum gedachte? Het is niet alleen zomaar een thema of een logootje, maar
+het gaat om de hele sfeer eromheen. Het gevoel dat onder de Virgilianen hangt,
+hoe er over het lustrum gesproken wordt en vooral de spanning die je voelt
+omdat het enige echte lustrumjaar er aan zit te komen!
+
+<Feedback filePath={props.data.mdx.fileAbsolutePath} />

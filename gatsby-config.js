@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 require(`dotenv`).config({
   path: `.env.build`,
 });
@@ -34,6 +35,7 @@ module.exports = {
         icon: `src/assets/4d-logo.png`,
       },
     },
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
@@ -47,8 +49,33 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `memory-pages`,
+        path: `${__dirname}/src/pages/memories`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout-mdx.jsx"),
+        },
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-unwrap-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              showCaptions: true,
+            },
+          },
+        ],
       },
     },
     `gatsby-transformer-remark`,
@@ -67,7 +94,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        tailwind: true,
+        extractors: [
+          {
+            extractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
+            extensions: ["js", "ts", "jsx", "tsx", "md", "mdx"],
+          },
+        ],
         purgeOnly: [`src/css/style.css`],
         whitelistPatterns: [
           /black$/,
@@ -106,10 +138,6 @@ module.exports = {
           {
             // this type will become `allWorkshop` in graphql
             type: `images`,
-
-            // probably don't want your entire database, use the query option
-            // to limit however you'd like
-            query: (ref) => ref.limitToLast(10),
 
             // the path to get the records from
             path: `images`,

@@ -1,8 +1,9 @@
 ---
-title: "Lustrum Revival Dixo"
-path: "/media/lustrum-revival-dixo"
 category: "images/Revival Dixo"
+title: "Zaal"
+slug: "/media/lustrum-revival-dixo"
+eventID: "revival"
 featuredImage: "revival-dixo.jpg"
-theme: "normal"
+date: "2018-10-23"
 sort: 600
 ---

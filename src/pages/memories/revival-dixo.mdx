@@ -1,0 +1,78 @@
+---
+slug: /memories/revival-dixo
+eventID: revival
+title: De revival dixo
+commiteePhoto: "../../images/Media-Marketing_commissie.jpg"
+---
+
+export const commissie = [
+  {
+    function: "Voorzitter/Hoofdredacteur",
+    name: "Leidy Kupers",
+  },
+  {
+    function: "Secretaris/Eindredacteur",
+    name: "Lorenzo Flipse",
+  },
+  {
+    function: "Penningsmeester",
+    name: "Leanne van Bentem",
+  },
+  {
+    function: "Commissaris Marketing Logistiek/Lay-out",
+    name: "Maurits Misana",
+  },
+  {
+    function: "Commissaris Marketing Design/Lay-out",
+    name: "Amy den Dekker",
+  },
+  {
+    function: "Commissaris Foto & Film",
+    name: "Anand Sie",
+  },
+];
+
+import { graphql } from "gatsby";
+import { getColorByID } from "../../components/utils";
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { slug: { eq: "/memories/revival-dixo" } }) {
+      fileAbsolutePath
+      frontmatter {
+        commiteePhoto {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<Introduction
+  color={getColorByID(props.pageContext.frontmatter.eventID)}
+  title={props.pageContext.frontmatter.title}
+>
+  Waar we het lustrum avontuur begonnen met het openingsfeest, werd het weer
+  gepast afgesloten tijdens de Revival Dixo. Lustrum Media heeft zich gedurende
+  het lustrum beziggehouden met de vastlegging en marketing van de evenementen.
+  Als klap op de vuurpijl hebben ze een lustrumboek gemaakt, met alle
+  herinneringen over de Vierde Dimensie. Tijdens de Revival Dixo was het dan
+  eindelijk tijd om zowel het boek te presenteren, als dé aftermovie (meer dan
+  30 minuten!) van het lustrumjaar te tonen in een tot bioscoopzaal omgebouwde
+  eetzaal.
+</Introduction>
+
+<Committee
+  commiteeName="Media & Marketing Commissie"
+  members={commissie}
+  image={props.data.mdx.frontmatter.commiteePhoto}
+/>
+
+<MediaHighlighter event={props.pageContext.frontmatter.eventID} />
+
+<Feedback filePath={props.data.mdx.fileAbsolutePath} />

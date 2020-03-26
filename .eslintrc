@@ -7,11 +7,11 @@
   },
   // https://github.com/babel/babel-eslint
   "parser": "babel-eslint",
+  "plugins": ["prettier"],
   "rules": {
     // https://eslint.org/docs/2.0.0/rules/strict
-    "strict": 0,
-    // Disable prop-types as we use TypeScript for type checking
-    "react/prop-types": 1,
+    "strict": 2,
+    "react/prop-types": 0,
     "react/jsx-sort-props": [
       1,
       {
@@ -20,9 +20,13 @@
         "shorthandLast": false,
         "ignoreCase": true,
         "noSortAlphabetically": false,
-        "reservedFirst": true,
+        "reservedFirst": true
       }
     ],
+    "prettier/prettier": "error",
+    "no-console": 2,
+    "import/no-extraneous-dependencies": 0,
+    "no-underscore-dangle": ["error", { "allow": ["_seconds"] }]
   },
   "settings": {
     "react": {
@@ -34,7 +38,12 @@
     "eslint:recommended",
     // https://github.com/yannickcr/eslint-plugin-react#recommended
     "plugin:react/recommended",
+    "airbnb",
+    "airbnb/hooks",
     // https://github.com/benmosher/eslint-plugin-import
-    "plugin:import/recommended"
+    "plugin:import/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "prettier/react"
   ]
 }

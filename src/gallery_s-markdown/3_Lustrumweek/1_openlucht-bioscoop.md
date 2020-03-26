@@ -1,8 +1,9 @@
 ---
-title: "Lustrumeek/&#8203;Openlucht Bioscoop"
-path: "/media/lustrumweek/openlucht-bioscoop"
 category: "images/Lustrumweek/Openlucht Bioscoop"
+title: "Openlucht Bioscoop"
+slug: "/media/lustrumweek/openlucht-bioscoop"
+eventID: "lustrumweek"
 featuredImage: "openlucht-bioscoop.jpg"
-theme: "lustrumweek"
+date: "2018-05-07"
 sort: 310
 ---

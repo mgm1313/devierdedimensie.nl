@@ -3,7 +3,7 @@ const path = require(`path`);
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
-  const galleryTemplate = path.resolve(`./src/templates/gallery-page.js`);
+  const galleryTemplate = path.resolve(`./src/templates/gallery-page.jsx`);
 
   let pages = await graphql(`
     {
@@ -12,7 +12,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               title
-              path
+              slug
+              eventID
               category
             }
           }
@@ -31,10 +32,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   pages.forEach(({ node }, index) => {
     createPage({
-      path: node.frontmatter.path,
+      path: node.frontmatter.slug,
       component: galleryTemplate,
       context: {
-        sort: node.frontmatter.sort,
+        eventID: node.frontmatter.eventID,
         category: node.frontmatter.category,
         prev: index === 0 ? null : pages[index - 1].node,
         next: index === pages.length - 1 ? null : pages[index + 1].node,

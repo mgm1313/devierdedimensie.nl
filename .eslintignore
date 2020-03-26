@@ -1,4 +1,5 @@
 .cache
+.now
 node_modules
 public
 functions

@@ -1,13 +1,15 @@
-export const events = [
+export default [
   {
     title: `Openingsfeest`,
-    short: `opening`,
+    eventID: `opening`,
     color: `black`,
+    date: "28 sep 2017",
     videos: [
       {
         title: `Aftermovie`,
         id: `1AE-asGI-tc`,
-        ratio: `16_9`,
+        placeholderVid: "/placeholder-vids/openingsfeest_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Openingsfeest.jpg",
       },
     ],
     downloads: [
@@ -25,13 +27,15 @@ export const events = [
   },
   {
     title: `Gala`,
-    short: `gala`,
+    eventID: `gala`,
     color: `gala`,
+    date: "16 dec 2017",
     videos: [
       {
         title: `Aftermovie`,
         id: `X1sTi25LICA`,
-        ratio: `21_9`,
+        placeholderVid: "/placeholder-vids/gala_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Gala.jpg",
       },
     ],
     downloads: [
@@ -49,18 +53,21 @@ export const events = [
   },
   {
     title: `Wintersport`,
-    short: `wispo`,
+    eventID: `wispo`,
     color: `wispo`,
+    date: "2-11 feb 2018",
     videos: [
       {
         title: `PitStopParty Roda JC`,
         id: `kl6zrdr48Ks`,
-        ratio: `16_9`,
+        placeholderVid: "/placeholder-vids/pitstopparty_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Pitstopparty.jpg",
       },
       {
         title: `Aftermovie`,
         id: `xk_WgpnSfvY`,
-        ratio: `21_9`,
+        placeholderVid: "/placeholder-vids/wispo_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Wintersport.jpg",
       },
     ],
     downloads: [
@@ -83,13 +90,15 @@ export const events = [
   },
   {
     title: `Lustrumweek`,
-    short: `lustrumweek`,
+    eventID: `lustrumweek`,
     color: `lustrumweek`,
+    date: "6-12 mei 2018",
     videos: [
       {
         title: `Aftermovie`,
         id: `qqUn8B5z0z0`,
-        ratio: `21_9`,
+        placeholderVid: "/placeholder-vids/lustrumweek_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Lustrumweek.jpg",
       },
     ],
     downloads: [
@@ -107,13 +116,15 @@ export const events = [
   },
   {
     title: `Lustrum Productie`,
-    short: `theater`,
+    eventID: `theater`,
     color: `theater`,
+    date: "11 jun 2018",
     videos: [
       {
         title: `Aftermovie`,
         id: `xs7GgVPXuus`,
-        ratio: `16_9`,
+        placeholderVid: "/placeholder-vids/shrek_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Shrek.jpg",
       },
     ],
     downloads: [
@@ -131,18 +142,21 @@ export const events = [
   },
   {
     title: `Piekweek`,
-    short: `piekweek`,
+    eventID: `piekweek`,
     color: `piekweek`,
+    date: "13-22 jul 2018",
     videos: [
       {
         title: `Locatie Bekendmaking`,
         id: `9qhZK-F1-xE`,
-        ratio: `16_9`,
+        placeholderVid: "/placeholder-vids/locatie-bekendmaking_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Terreinbekendmaking.jpg",
       },
       {
         title: `Aftermovie`,
         id: `3bObBCtdADU`,
-        ratio: `21_9`,
+        placeholderVid: "/placeholder-vids/piekweek_loop.mp4",
+        placeholderThumb: "/placeholder-vids/Piekweek.jpg",
       },
     ],
     downloads: [
@@ -165,13 +179,15 @@ export const events = [
   },
   {
     title: `Revival Dixo`,
-    short: `revival`,
+    eventID: `revival`,
     color: `black`,
+    date: "23 okt 2018",
     videos: [
       {
         title: `Lustrumboek Onthulling`,
         id: `nnA1spGM-xY`,
-        ratio: `16_9`,
+        placeholderVid: "/placeholder-vids/boek-onthulling_loop.mp4",
+        placeholderThumb: "/placeholder-vids/RevivalDixo.jpg",
       },
     ],
     downloads: [

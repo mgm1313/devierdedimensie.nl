@@ -1,8 +1,9 @@
 ---
-title: "Lustrumeek/&#8203;Masters of Darts"
-path: "/media/lustrumweek/masters-of-darts"
 category: "images/Lustrumweek/Masters of Darts"
+title: "Masters of Darts"
+slug: "/media/lustrumweek/masters-of-darts"
+eventID: "lustrumweek"
 featuredImage: "masters-of-darts.jpg"
-theme: "lustrumweek"
+date: "2018-05-10"
 sort: 340
 ---

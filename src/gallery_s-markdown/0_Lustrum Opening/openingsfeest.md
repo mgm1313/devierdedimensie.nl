@@ -1,8 +1,9 @@
 ---
-title: "Lustrum Openingsfeest"
-path: "/media/lustrum-openingsfeest"
 category: "images/Lustrum Opening"
+title: "Zaal"
+slug: "/media/lustrum-openingsfeest"
+eventID: "opening"
 featuredImage: "openingsfeest.jpg"
-theme: "normal"
+date: "2017-09-28"
 sort: 000
 ---
