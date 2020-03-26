@@ -4,40 +4,48 @@ import vierdedimensie from "../assets/de-vierde-dimensie-text.svg";
 
 function Header() {
   return (
-    <header className="px-3 md:px-8 lg:px-12 2xl:px-20 py-6 sm:py-8">
-      <div className="flex flex-wrap items-center justify-between">
-        <Link className="flex items-center no-underline text-black" to="/">
+    <header className="px-4 md:px-8 py-6 sm:py-8 overflow-x-auto">
+      <div className="flex bigm:px-1 sm:px-6 items-center justify-between">
+        <Link className="flex-none" to="/">
           <img
             alt="De Vierde Dimensie logo"
-            className="h-8 bigm:h-10 sm:h-12 lg:h-16"
+            className="h-6 bigm:h-8 md:h-12"
             src={vierdedimensie}
           />
         </Link>
 
-        <nav className={`block flex items-center w-auto`}>
+        <nav className="flex flex-initial">
           {[
-            // Currently under development
-            // {
-            //   route: `/memories`,
-            //   title: `Memories`
-            // },
+            {
+              route: `/memories`,
+              icon: `📜`,
+              artiaLabel: `Oud perkament`,
+              title: `Verhalen`,
+            },
             {
               route: `/media`,
-              title: `Media`
+              icon: `🎬`,
+              artiaLabel: `Filmklapper`,
+              title: `Media`,
             },
             {
               route: `/colofon`,
-              title: `Colofon`
-            }
-          ].map(link => (
+              icon: `📎`,
+              artiaLabel: `Paperclip`,
+              title: `Colofon`,
+            },
+          ].map((link) => (
             <Link
-              activeClassName="underline"
-              className="inline-block text-sm bigm:text-base 2xl:text-lg mt-0 ml-3 bigm:ml-4 sm:ml-6 text-black uppercase"
               key={link.title}
+              activeClassName="underline"
+              className="text-xs bigm:text-sm sm:text-base ml-2 sm:ml-8 font-semibold text-gray-500 uppercase border-b-2 border-transparent hover:border-gray-900"
               partiallyActive={true}
               to={link.route}
             >
-              {link.title}
+              <div className="flex flex-wrap items-center justify-center">
+                <span aria-label={link.artiaLabel} className="mr-2" role="img">{link.icon}</span>
+                <span className="leading-none">{link.title}</span>
+              </div>
             </Link>
           ))}
         </nav>

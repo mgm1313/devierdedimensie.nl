@@ -1,6 +1,9 @@
+/*! purgecss start ignore */
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+html {
+  font-size: 18px;
+}
 
 body {
   font-variant-ligatures: no-common-ligatures;
@@ -244,3 +247,8 @@ body {
     background-size: initial;
   }
 }
+
+@tailwind components;
+/*! purgecss end ignore */
+
+@tailwind utilities;

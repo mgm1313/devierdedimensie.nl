@@ -12,8 +12,9 @@ class GallerySection extends Component {
 
     return (
       <section
-        className={`my-8 bigm:my-10 sm:my-16 xl:my-20 ${i % 2 !== 0 &&
-          `text-right`}`}
+        className={`my-8 bigm:my-10 sm:my-16 xl:my-20 ${
+          i % 2 !== 0 && `text-right`
+        }`}
         id={event.short}
       >
         <h2
@@ -31,7 +32,7 @@ class GallerySection extends Component {
 
           <div className="-mx-1">
             {event.downloads.map((download, i) => (
-              <DownloadButton download={download} event={event} key={i} />
+              <DownloadButton key={i} download={download} event={event} />
             ))}
           </div>
         </div>
@@ -44,8 +45,8 @@ class GallerySection extends Component {
               <VideoItem key={i} video={video} />
             ))}
 
-            {gallery.edges.map(gallery => (
-              <GalleryItem gallery={gallery} key={gallery.node.id} />
+            {gallery.edges.map((gallery) => (
+              <GalleryItem key={gallery.node.id} gallery={gallery} />
             ))}
           </ul>
         </div>

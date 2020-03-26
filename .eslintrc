@@ -9,7 +9,20 @@
   "parser": "babel-eslint",
   "rules": {
     // https://eslint.org/docs/2.0.0/rules/strict
-    "strict": 0
+    "strict": 0,
+    // Disable prop-types as we use TypeScript for type checking
+    "react/prop-types": 1,
+    "react/jsx-sort-props": [
+      1,
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "shorthandLast": false,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true,
+      }
+    ],
   },
   "settings": {
     "react": {

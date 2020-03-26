@@ -23,7 +23,7 @@ function GalleryPage({ data, pageContext }) {
 
   const [lightboxController, setLightboxController] = useState({
     photoIndex: 0,
-    isOpen: false
+    isOpen: false,
   });
 
   const sources = [],
@@ -84,8 +84,8 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
     <button
       aria-label="Show info"
       className="ril__infoButton ril-toolbar__item__child ril__toolbarItemChild ril__builtinButton"
-      onClick={() => setshowCaption(!showCaption)}
       type="button"
+      onClick={() => setshowCaption(!showCaption)}
     ></button>
   );
 
@@ -98,7 +98,7 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
   function openLightboxOnSlide(number) {
     setLightboxController({
       photoIndex: number,
-      isOpen: !lightboxController.isOpen
+      isOpen: !lightboxController.isOpen,
     });
   }
 
@@ -132,11 +132,11 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
           <div className="right-0 absolute flex flex-1 justify-end mr-2px xxiv-count-label -z-10">
             {[...data.allImages.totalCount.toString()].map((integer, i) => (
               <img
+                key={i}
                 alt={integer}
                 className={`h-12 bigm:h-16 md:h-24 -z-10 lazyload sm:opacity-100
                   ${frontmatter.theme === `normal` ? `opacity-75` : ``}`}
                 data-src={`/xxiv-numbers/xxiv-${integer}-${frontmatter.theme}.svg`}
-                key={i}
               />
             ))}
             <img
@@ -155,30 +155,30 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
               mainSrcThumbnail={thumbnails[lbCurrent]}
               nextSrc={sources[lbNext]}
               nextSrcThumbnail={thumbnails[lbNext]}
+              prevSrc={sources[lbPrev]}
+              prevSrcThumbnail={thumbnails[lbPrev]}
+              toolbarButtons={[flagBtn, downloadBtn, infoBtn]}
               onAfterOpen={() => setlockScroll(true)}
               onCloseRequest={() => {
                 setLightboxController({ isOpen: false });
                 setlockScroll(false);
                 document.getElementById(id[lbCurrent]).scrollIntoView({
                   behavior: `smooth`,
-                  block: `nearest`
+                  block: `nearest`,
                 });
               }}
               onMoveNextRequest={() =>
                 setLightboxController({
                   photoIndex: lbNext,
-                  isOpen: lightboxController.isOpen
+                  isOpen: lightboxController.isOpen,
                 })
               }
               onMovePrevRequest={() =>
                 setLightboxController({
                   photoIndex: lbPrev,
-                  isOpen: lightboxController.isOpen
+                  isOpen: lightboxController.isOpen,
                 })
               }
-              prevSrc={sources[lbPrev]}
-              prevSrcThumbnail={thumbnails[lbPrev]}
-              toolbarButtons={[flagBtn, downloadBtn, infoBtn]}
             />
           )}
 
@@ -186,9 +186,9 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
 
           {qImages.map(({ node }, index) => (
             <div
+              key={node.id}
               className={`cursor-pointer w-1/2 bigm:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2px aspect-ratio-box`}
               id={node.id}
-              key={node.id}
               onClick={() => openLightboxOnSlide(index)}
             >
               <div className="relative w-full h-full">
@@ -216,8 +216,9 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
         >
           <ol className="list-none p-0 flex justify-between leading-tight">
             <li
-              className={`safe-m-b flex items-center pr-3 2xl:pr-4 py-3 2xl:py-4 ${prev &&
-                `bg-white`}`}
+              className={`safe-m-b flex items-center pr-3 2xl:pr-4 py-3 2xl:py-4 ${
+                prev && `bg-white`
+              }`}
             >
               {prev && (
                 <>
@@ -235,8 +236,9 @@ Motivatie: [Waarom moeten we deze foto verwijderen?]
               )}
             </li>
             <li
-              className={`safe-m-b flex items-center text-right pl-3 2xl:pl-4 py-3 2xl:py-4 ${next &&
-                `bg-white`}`}
+              className={`safe-m-b flex items-center text-right pl-3 2xl:pl-4 py-3 2xl:py-4 ${
+                next && `bg-white`
+              }`}
             >
               {next && (
                 <>

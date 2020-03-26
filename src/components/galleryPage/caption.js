@@ -37,7 +37,7 @@ class Caption extends Component {
                 hour: `2-digit`,
                 minute: `2-digit`,
                 second: `2-digit`,
-                timeZoneName: `short`
+                timeZoneName: `short`,
               })}
             </div>
           )}
@@ -46,8 +46,8 @@ class Caption extends Component {
               {` `}
               {node.labels.map((label, i) => (
                 <span
-                  className="inline-block lowercase bg-gray-800 px-2 py-px text-xs text-gray-500 mr-2 mt-2"
                   key={i}
+                  className="inline-block lowercase bg-gray-800 px-2 py-px text-xs text-gray-500 mr-2 mt-2"
                 >
                   {label.description}
                 </span>

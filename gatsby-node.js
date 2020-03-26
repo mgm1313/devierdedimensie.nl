@@ -5,22 +5,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const galleryTemplate = path.resolve(`./src/templates/gallery-page.js`);
 
-  let pages = await
-    graphql(`
-      {
-        allMarkdownRemark(sort: { fields: frontmatter___sort, order: ASC }) {
-          edges {
-            node {
-              frontmatter {
-                title
-                path
-                category
-              }
+  let pages = await graphql(`
+    {
+      allMarkdownRemark(sort: { fields: frontmatter___sort, order: ASC }) {
+        edges {
+          node {
+            frontmatter {
+              title
+              path
+              category
             }
           }
         }
       }
-    `);
+    }
+  `);
 
   // Handle errors
   if (pages.errors) {
@@ -29,7 +28,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   pages = pages.data.allMarkdownRemark.edges;
- 
+
   pages.forEach(({ node }, index) => {
     createPage({
       path: node.frontmatter.path,
@@ -38,8 +37,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         sort: node.frontmatter.sort,
         category: node.frontmatter.category,
         prev: index === 0 ? null : pages[index - 1].node,
-        next: index === pages.length - 1 ? null : pages[index + 1].node
-      }
+        next: index === pages.length - 1 ? null : pages[index + 1].node,
+      },
     });
   });
 };

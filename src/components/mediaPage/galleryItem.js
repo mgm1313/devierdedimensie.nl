@@ -17,11 +17,11 @@ class GalleryItem extends Component {
             <span
               className="gallery-item-title text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl"
               dangerouslySetInnerHTML={{
-                __html: gallery.node.frontmatter.title
+                __html: gallery.node.frontmatter.title,
               }}
               style={{
                 wordBreak: `break-word`,
-                textShadow: `0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08)`
+                textShadow: `0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08)`,
               }}
             ></span>
             <span>

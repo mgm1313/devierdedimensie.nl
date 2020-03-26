@@ -10,7 +10,7 @@ const BackToTopButton = () => (
       style={{
         background: `rgba(0,0,0,0.85) url(${arrowTop}) no-repeat center`,
         width: `35px`,
-        height: `35px`
+        height: `35px`,
       }}
       type="button"
     ></button>

@@ -20,7 +20,7 @@ function GalleryOverviewPage({ data }) {
       <SEO title="Media" />
 
       <div className="absolute -z-10 inset-0 overflow-hidden" id="page-media">
-        {[2, 3, 4].map(i => (
+        {[2, 3, 4].map((i) => (
           <img
             key={i}
             alt=""
@@ -36,10 +36,10 @@ function GalleryOverviewPage({ data }) {
       <main className="max-w-6xl 2xl:max-w-75vw mx-auto w-full px-3 md:px-8 lg:px-12 2xl:px-20">
         {events.map((event, i) => (
           <GallerySection
+            key={i}
             event={event}
             gallery={data[event.short]}
             index={i}
-            key={i}
           />
         ))}
       </main>

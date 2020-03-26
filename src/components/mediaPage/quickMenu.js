@@ -14,12 +14,12 @@ class QuickMenu extends Component {
 
               return (
                 <button
-                  className={`m-2 2xl:m-3 leading-none uppercase border-b-2 border-${event.color}`}
                   key={i}
+                  className={`m-2 2xl:m-3 leading-none uppercase border-b-2 border-${event.color}`}
                   onClick={() =>
                     document.getElementById(shortName).scrollIntoView({
                       behavior: `smooth`,
-                      block: `nearest`
+                      block: `nearest`,
                     })
                   }
                 >
