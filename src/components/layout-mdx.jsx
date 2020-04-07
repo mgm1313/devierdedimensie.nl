@@ -93,7 +93,6 @@ const Committee = ({ commiteeName, members, image }) => (
 );
 
 const MediaHighlighter = ({ event }) => {
-  console.log(`Event${event}`);
   const eventData = getEventByID(event);
 
   return (
