@@ -1,6 +1,6 @@
 {
   "name": "xxiv-memories",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "author": "Maurits Misana <maurits@techmaus.nl>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.8",
