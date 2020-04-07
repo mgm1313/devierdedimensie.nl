@@ -1,8 +1,9 @@
 ---
-title: "Lustrumeek/&#8203;Strandfestival"
-path: "/media/lustrumweek/strandfestival"
 category: "images/Lustrumweek/Strandfestival"
+title: "Strandfestival"
+slug: "/media/lustrumweek/strandfestival"
+eventID: "lustrumweek"
 featuredImage: "strandfestival.jpg"
-theme: "lustrumweek"
+date: "2018-05-12"
 sort: 360
 ---

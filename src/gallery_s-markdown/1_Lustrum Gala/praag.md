@@ -1,8 +1,9 @@
 ---
-title: "Lustrum Gala/&#8203;Praag"
-path: "/media/lustrum-gala-praag"
 category: "images/Lustrum Gala/Praag"
+title: "Praag"
+slug: "/media/lustrum-gala-praag"
+eventID: "gala"
 featuredImage: "praag.jpg"
-theme: "gala"
+date: "2017-12-16"
 sort: 120
 ---

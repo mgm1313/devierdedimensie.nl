@@ -1,0 +1,124 @@
+---
+slug: /memories/lustrumweek
+eventID: lustrumweek
+title: De Lustrumweek
+commiteePhoto: "../../images/Lustrumweek_commissie.jpg"
+---
+
+export const commissie = [
+  {
+    function: "Voorzitter",
+    name: "Rutger de Waard",
+  },
+  {
+    function: "Secretaris",
+    name: "Izaak Geursen",
+  },
+  {
+    function: "Penningsmeester",
+    name: "Quentin van Driel",
+  },
+  {
+    function: "Commissaris Intern",
+    name: "Annette Heinen",
+  },
+  {
+    function: "Commissaris Activiteiten",
+    name: "Guusje Jans",
+  },
+  {
+    function: "Commissaris Promo",
+    name: "Otto Krans",
+  },
+];
+
+import { graphql } from "gatsby";
+import { getColorByID } from "../../components/utils";
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { slug: { eq: "/memories/lustrumweek" } }) {
+      fileAbsolutePath
+      frontmatter {
+        commiteePhoto {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<Introduction
+  color={getColorByID(props.pageContext.frontmatter.eventID)}
+  title={props.pageContext.frontmatter.title}
+>
+  Waar leden hun geliefde N8W8 ingeruild zagen worden voor een onbekend lustrum
+  alternatief, bleek dat de Lustrumweek een totaal ander concept volgde dan
+  welke feestweek die Virgiel ooit had gezien. Waar de activiteiten tijdens het
+  vorige Lustrum enigszins weg vielen in de roes van alle feesten was een aparte
+  week vol activiteiten een oplossing om alle leden te trakteren op een week
+  waarin iedereen mocht weten dat Virgiel haar lustrum groots zou vieren. In
+  alle facetten werd voorzien tijdens de lustrumweek. Iedereen binnen en buiten
+  Virgiel kon meegenieten van de meest uiteenlopende activiteiten en kon op
+  talloze wijzen worden geprikkeld om zich op welke manier dan ook te
+  ontwikkelen, de essentie en het hoofddoel van Virgiel als vereniging.
+</Introduction>
+
+<Committee
+  commiteeName="Lustrumweek Commissie"
+  members={commissie}
+  image={props.data.mdx.frontmatter.commiteePhoto}
+/>
+
+<MediaHighlighter event={props.pageContext.frontmatter.eventID} />
+
+## Vanuit de Lustrumweek commissie
+
+Wat zou je doen als iemand tegen je zegt: “hier heb je een zak met geld en ga
+maar doen wat je leuk vindt”. Op deze manier werden wij met z’n 6en in het
+diepe gegooid en net als menig persoon hadden ook wij geen idee. Dit jaar is
+het lustrum in een nieuw jasje gestoken, met voor het eerst een lustrumweek.
+Deze nieuwe structuur betekende voor ons een wit vel, wat we helemaal zelf in
+konden kleuren, we hadden geen idee waar we aan gingen beginnen. Dit zorgde er
+ook voor dat het eerste halfjaar vooral in het teken stond van oneindig
+brainstormen over wat we nou precies wilden gaan doen. Ons doel was om een
+week neer te zetten vol nieuwe activiteiten, waar voor iedere Virgiliaan wat
+bij zat. Een passend programma hierbij bedenken bleek nog best een lastige
+opgave. In principe was alles mogelijk, wat heel mooi klonk, maar wat er ook
+voor zorgde dat we lange tijd geen idee hadden wat we nou eigenlijk aan het
+doen waren.
+
+<Blockquote align="right">
+  "Wat zou je doen als iemand tegen je zegt: 'hier heb je een zak met geld en ga
+  maar doen wat je leuk vindt'?"
+</Blockquote>
+
+Ruim een half jaar verder waren alle ideeën er, maar waren er nog
+heel weinig concrete plannen. Direct na de wispo gingen we full-time en vanaf
+dag 1 konden we eindelijk al onze aandacht op de lustrumweek richten. Na twee
+weken hadden wij allemaal het gevoel dat weer meer hadden bereikt dan in het
+hele half jaar ervoor en dit zorgde voor veel motivatie om een fantastische
+week neer te zetten.
+
+Inmiddels terugkijkend ben ik enorm trots op wat wij met
+elkaar hebben neergezet. Ik ben blij dat ik mijn steentje heb mogen bijdragen
+aan een onvergetelijk 24e lustrum. Een jaar iets voorbereiden klinkt lang,
+maar als je eerst een half jaar alles moet bedenken omdat er geen enkel
+voorbeeld is dan vliegt die tijd voorbij. Ik denk dat we er met de groep in
+geslaagd zijn om dit concept uit te werken naar een diverse en bovenal leuke
+week. Nog steeds geniet ik van alle positieve reacties die we hebben ontvangen
+en kan ik achteraf zeggen dat de lustrumweek precies is geworden wat het moest
+worden, ondanks dat we van te voren niet eens wisten wat het moest worden.
+
+<Blockquote align="left">
+  "Nog steeds geniet ik van alle positieve reacties die we hebben ontvangen en
+  kan ik achteraf zeggen dat de lustrumweek precies is geworden wat het moest
+  worden, ondanks dat we van te voren niet eens wisten wat het moest worden."
+</Blockquote>
+
+<Feedback filePath={props.data.mdx.fileAbsolutePath} />

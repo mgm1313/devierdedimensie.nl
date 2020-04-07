@@ -1,8 +1,9 @@
 ---
-title: "Piekweek/&#8203;Openingsfeest"
-path: "/media/piekweek/openingsfeest"
 category: "images/Piekweek/Openingsfeest"
+title: "Openingsfeest"
+slug: "/media/piekweek/openingsfeest"
+eventID: "piekweek"
 featuredImage: "openingsfeest.jpg"
-theme: "piekweek"
+date: "2018-07-15"
 sort: 520
 ---

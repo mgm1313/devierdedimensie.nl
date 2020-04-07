@@ -1,8 +1,9 @@
 ---
-title: "Lustrumeek/&#8203;Re&uuml;nisten Tour"
-path: "/media/lustrumweek/reunisten-tour"
 category: "images/Lustrumweek/Reunisten Tour"
+title: "Re&uuml;nisten Tour"
+slug: "/media/lustrumweek/reunisten-tour"
+eventID: "lustrumweek"
 featuredImage: "reunisten-tour.jpg"
-theme: "lustrumweek"
+date: "2018-05-09"
 sort: 330
 ---

@@ -1,8 +1,9 @@
 ---
-title: "Lustrumeek/&#8203;Pool Party"
-path: "/media/lustrumweek/pool-party"
 category: "images/Lustrumweek/Pool Party"
+title: "Pool Party"
+slug: "/media/lustrumweek/pool-party"
+eventID: "lustrumweek"
 featuredImage: "pool-party.jpg"
-theme: "lustrumweek"
+date: "2018-05-08"
 sort: 320
 ---

@@ -1,0 +1,101 @@
+---
+slug: /memories/lustrum-productie
+eventID: theater
+title: De lustrum productie
+commiteePhoto: "../../images/Lustrum-Productie_commissie.jpg"
+---
+
+export const commissie = [
+  {
+    function: "Voorzitter & band",
+    name: "Silke van der Burg",
+  },
+  {
+    function: "Secretaris & Kostuum",
+    name: "Lieke Schneidenberg",
+  },
+  {
+    function: "Penningsmeester & Zang",
+    name: "Lot van Leeuwen",
+  },
+  {
+    function: "Theater, Promo & Spel",
+    name: "Maria Geuze",
+  },
+  {
+    function: "Vice & Dans",
+    name: "Sophia Brans",
+  },
+  {
+    function: "Extern & Decor",
+    name: "Thijs van Veldhoven",
+  },
+  {
+    function: "Theater & Techniek",
+    name: "Martin Geertjes",
+  },
+];
+
+import { graphql } from "gatsby";
+import { getColorByID } from "../../components/utils";
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { slug: { eq: "/memories/lustrum-productie" } }) {
+      fileAbsolutePath
+      frontmatter {
+        commiteePhoto {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<Introduction
+  color={getColorByID(props.pageContext.frontmatter.eventID)}
+  title={props.pageContext.frontmatter.title}
+>
+  Ieder jaar wordt er voor en door Virgilianen een fantastische productie
+  neergezet op de planken van Theater de Veste. Dit jaar vond het echter op een
+  andere locatie plaats in verband met het lustrum. Na ruim een jaar lang
+  zwoegen en zweten is op 11 juni 2018 Shrek de Musical opgevoerd in het
+  grootste theater van Nederland, namelijk het AFAS Circustheater in
+  Scheveningen.
+</Introduction>
+
+<Committee
+  commiteeName="Lustrum Productie"
+  members={commissie}
+  image={props.data.mdx.frontmatter.commiteePhoto}
+/>
+
+<MediaHighlighter event={props.pageContext.frontmatter.eventID} />
+
+## Vanuit de Lustrum Productie
+
+Het lustrumjaar kwam er aan en dat betekende dat er een lustrum productie aan
+zat te komen. Om deze reden zijn we een stuk eerder gevraagd als commissie, en
+met een persoon extra ten opzicht van normaal. Al vroeg konden we ons gaan
+focussen op het vinden van een geschikte locatie waarmee onderscheid kon
+worden gemaakt met andere jaren. Het AFAS Circustheater zou voor ons de ideale
+locatie worden en voor het stuk werd al snel duidelijk dat het Shrek de
+Musical moest worden. Voor alle deelnemers was afgelopen jaar een unieke kans
+om in een theater te spelen en een stuk op te voeren die anders niet mogelijk
+is. Er is een show neergezet waarvan niemand had gedacht dat het zou lukken.
+Iedereen heeft hard naar het einde toegewerkt en het resultaat mocht er daarom
+zeker weten zijn!
+
+<Blockquote align="right">
+  "Het AFAS Circustheater zou voor ons de ideale locatie worden en voor het stuk
+  werd al snel duidelijk dat het Shrek de Musical moest worden."
+</Blockquote>
+
+![AFAS Circustheater](<../../images/Virgiel - Theater-252.jpg>)
+
+<Feedback filePath={props.data.mdx.fileAbsolutePath} />

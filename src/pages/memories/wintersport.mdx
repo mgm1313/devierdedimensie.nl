@@ -1,0 +1,119 @@
+---
+slug: /memories/wintersport
+eventID: wispo
+title: De Lustrum Wintersport
+commiteePhoto: "../../images/Wintersport_commissie.jpg"
+---
+
+export const commissie = [
+  {
+    function: "Voorzitter",
+    name: "Jim Tukker",
+  },
+  {
+    function: "Secretaris/Commissaris Activiteiten",
+    name: "Lieke Lohmeijer",
+  },
+  {
+    function: "Penningsmeester",
+    name: "Luc Dierick",
+  },
+  {
+    function: "Commissaris Locatie",
+    name: "Jaap Verbruggen",
+  },
+  {
+    function: "Commissaris Logistiek",
+    name: "Hester Vennema",
+  },
+  {
+    function: "Commissaris Promo",
+    name: "Nina Rodenburg",
+  },
+];
+
+import { graphql } from "gatsby";
+import { getColorByID } from "../../components/utils";
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { slug: { eq: "/memories/wintersport" } }) {
+      fileAbsolutePath
+      frontmatter {
+        commiteePhoto {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<Introduction
+  color={getColorByID(props.pageContext.frontmatter.eventID)}
+  title={props.pageContext.frontmatter.title}
+>
+  In februari 2018 hebben we 1032 van onze beste vrienden meegenomen om een week
+  lang Les Deux Alpes op z’n kop te zetten. In het Virgieldorp kon iedere
+  gelukkige met een kaartje genieten van sneeuw, meer dan 200 km piste,
+  exclusieve Virgielbarren, bier voor 50% van de prijs en allemaal leuke
+  verrassingen. Na ruim een jaar aan voorbereiding is het gelukt wat tot nu toe
+  nog niemand is gelukt. Met 1032 deelnemers is de grootste studentenwintersport
+  een feit.
+</Introduction>
+
+<Committee
+  commiteeName="Wispo Commissie"
+  members={commissie}
+  image={props.data.mdx.frontmatter.commiteePhoto}
+/>
+
+<MediaHighlighter event={props.pageContext.frontmatter.eventID} />
+
+## Vanuit de Wispo commissie
+
+De lustrum wintersport zelf was geweldig, zoveel Virgilianen in één dorp zuipend
+in de Umbrella, Pano-bar, Yeti, Prins of Smithy’s. Overal waar je was waren er
+wel Virgilianen aan het genieten van een biertje. De eerste avond was een goede
+voorbereiding voor de kroegen op de rest van de week. Iedereen had namelijk zeker
+nog wel wat energie om ‘s avonds even op onderzoek uit te gaan waar ‘die Smithies’
+nu eigenlijk zat. Ook de rest van de week zat de sfeer er goed in. Van Dansado in
+de Pano tot PJ in de Umbrella, elk feestje was weer goed. Helaas stonden onze
+telefoons de hele week op roodgloeiend waardoor het zuipen bij ons iets minder vaak
+voorkwam. Daardoor maak je wel iets mee wat nog veel leuker is; nuchter genieten
+van al die blije Virgilianen en DJ’s die je allemaal bedanken voor de lustrumwispo
+en dat ze erbij mochten zijn!
+
+<Blockquote align="right">
+  "Van Dansado in de Pano tot PJ in de Umbrella, elk feestje was weer goed."
+</Blockquote>
+
+De woensdag hadden we een freestyle les georganiseerd voor leden die dat leuk vonden.
+Er was nog plek in een lesje waardoor een aantal van ons mee kon doen. We stonden bij
+de ESF en kregen ineens een tas met pieper, schep en sonde in onze handen gedrukt en
+een korte uitleg erbij. Al gauw werd duidelijk dat onze leraar dacht dat we in
+plaats van freestyle les, freeride les hadden (hors piste). Iedereen was hier stiekem
+mega blij mee want we gingen door de tiefsneeuw van kliffen springen en de lijpste
+jumps en afdalingen nemen, al met al fantastisch.
+
+Het einde van de week kwam al snel nabij, de laatste avond besloten we onszelf er
+volledig vanaf te leggen met de reisleiding, het Dagelijks Bestuur, de hele
+commissie en net te veel flessen wodka. En zo waren we alweer aan het einde van
+de week gekomen. Aan het eind van deze laatst dag, waar wij met z’n zessen afscheid
+namen van een emotionele Sjoukje, stapten ook wij de bus in en vielen, net als alle
+anderen, binnen een uur in slaap. Het volgende moment kwamen we alweer in Delft
+aan en was dit mooie avontuur tot een einde gekomen.
+
+<Blockquote align="left">
+  "Iedereen was hier stiekem mega blij mee want we gingen door de tiefsneeuw van
+  kliffen springen en de lijpste jumps en afdalingen nemen, al met al
+  fantastisch."
+</Blockquote>
+
+![Les Deux Alpes](../../images/Wispo_Foto's_sneeuw&drone-58.jpg)
+
+<Feedback filePath={props.data.mdx.fileAbsolutePath} />

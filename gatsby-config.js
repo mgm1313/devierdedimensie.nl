@@ -1,5 +1,6 @@
+/* eslint-disable global-require */
 require(`dotenv`).config({
-  path: `.env.build`
+  path: `.env.build`,
 });
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
     title: `De Vierde Dimensie - 24e Lustrum der KSV Sanctus Virgilius`,
     short_name: `XXIV memories`,
     description: `Herbeleef De Vierde Dimensie, hét thema van het 24e Lustrum der Katholieke Studentenvereniging Sanctus Virgilius. Hier vind je alle media: foto's, video's en muziek van het lustrum!`,
-    author: `@techmaus`
+    author: `@techmaus`,
   },
   plugins: [
     `gatsby-plugin-react-helmet-async`,
@@ -19,8 +20,8 @@ module.exports = {
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true
-      }
+        respectDNT: true,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -31,9 +32,10 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#4dc0b5`,
         display: `minimal-ui`,
-        icon: `src/assets/4d-logo.png`
-      }
+        icon: `src/assets/4d-logo.png`,
+      },
     },
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
@@ -41,30 +43,64 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/src/gallery_s-markdown`
-      }
+        path: `${__dirname}/src/gallery_s-markdown`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `memory-pages`,
+        path: `${__dirname}/src/pages/memories`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`
-      }
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout-mdx.jsx"),
+        },
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-unwrap-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              showCaptions: true,
+            },
+          },
+        ],
+      },
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-postcss`,
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)(`./tailwind.config.js`),
+          require(`autoprefixer`),
+          ...(process.env.NODE_ENV === "production"
+            ? [require(`cssnano`)]
+            : []),
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        tailwind: true,
-        purgeOnly: [`src/css/style.css`],
-        whitelist: [
-          `fslightbox-toolbar-button`,
-          `fslightbox-thumb`,
-          `fslightbox-slide-number-container`,
-          `aspect-ratio-16_9`,
-          `aspect-ratio-21_9`
+        extractors: [
+          {
+            extractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
+            extensions: ["js", "ts", "jsx", "tsx", "md", "mdx"],
+          },
         ],
+        purgeOnly: [`src/css/style.css`],
         whitelistPatterns: [
           /black$/,
           /gala$/,
@@ -73,9 +109,9 @@ module.exports = {
           /theater$/,
           /piekweek$/,
           /^ril/,
-          /^shape/
-        ]
-      }
+          /^shape/,
+        ],
+      },
     },
     `gatsby-plugin-offline`,
     {
@@ -91,7 +127,7 @@ module.exports = {
           auth_uri: process.env.AUTH_URI,
           token_uri: process.env.TOKEN_URI,
           auth_provider_x509_cert_url: process.env.AUTH_PROVIDER_X509_CERT_URL,
-          client_x509_cert_url: process.env.CLIENT_X509_CERT_URL
+          client_x509_cert_url: process.env.CLIENT_X509_CERT_URL,
         },
 
         // your firebase database root url
@@ -104,18 +140,18 @@ module.exports = {
             type: `images`,
 
             // the path to get the records from
-            path: `images`
-          }
-        ]
-      }
+            path: `images`,
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         typekit: {
-          id: `bnu0cor`
-        }
-      }
-    }
-  ]
+          id: `bnu0cor`,
+        },
+      },
+    },
+  ],
 };

@@ -1,8 +1,8 @@
 ---
-title: "Lustrum Wispo/&#8203;Landschap"
-path: "/media/lustrum-wispo/landschap"
 category: "images/Lustrum Wispo/Landschap"
+title: "Landschap"
+slug: "/media/lustrum-wispo/landschap"
+eventID: "wispo"
 featuredImage: "landschap.jpg"
-theme: "wispo"
 sort: 220
 ---

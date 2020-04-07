@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "xxiv-memories",
   "public": true,
   "build": {
     "env": {

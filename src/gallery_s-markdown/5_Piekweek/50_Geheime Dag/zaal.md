@@ -1,8 +1,9 @@
 ---
-title: "Piekweek/&#8203;Geheime Dag/&#8203;Zaal"
-path: "/media/piekweek/geheime-dag/zaal"
 category: "images/Piekweek/Geheime Dag/Zaal"
+title: "Geheime Dag/&#8203;Zaal"
+slug: "/media/piekweek/geheime-dag/zaal"
+eventID: "piekweek"
 featuredImage: "zaal.jpg"
-theme: "piekweek"
+date: "2018-07-18"
 sort: 551
 ---

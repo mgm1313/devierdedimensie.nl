@@ -56,6 +56,7 @@ Temporary Items
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+.vscode
 
 # Mono auto generated files
 mono_crash.*
@@ -416,3 +417,5 @@ MigrationBackup/
 .firebase/
 
 # End of https://www.gitignore.io/api/firebase
+
+.now
