@@ -32,7 +32,7 @@
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.4",
     "react-image-lightbox": "^5.1.1",
-    "react-player": "^1.15.2",
+    "react-player": "^1.15.3",
     "react-scrolllock": "^5.0.1",
     "react-waypoint": "^9.0.2",
     "scrollprogress": "^3.0.2"
