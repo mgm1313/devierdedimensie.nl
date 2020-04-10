@@ -24,7 +24,7 @@
     "gatsby-source-firebase": "^1.0.0",
     "gatsby-transformer-remark": "^2.7.1",
     "gatsby-transformer-sharp": "^2.4.2",
-    "html-react-parser": "^0.10.2",
+    "html-react-parser": "^0.10.3",
     "lazysizes": "^5.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
