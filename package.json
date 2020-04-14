@@ -30,7 +30,7 @@
     "react": "^16.13.1",
     "react-animate-height": "^2.0.20",
     "react-dom": "^16.13.1",
-    "react-helmet-async": "^1.0.4",
+    "react-helmet-async": "^1.0.5",
     "react-image-lightbox": "^5.1.1",
     "react-player": "^1.15.3",
     "react-scrolllock": "^5.0.1",
