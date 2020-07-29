@@ -18,7 +18,7 @@
     "gatsby-plugin-sharp": "^2.5.4",
     "gatsby-plugin-smoothscroll": "^1.1.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-remark-images": "^3.2.2",
+    "gatsby-remark-images": "^3.3.22",
     "gatsby-remark-unwrap-images": "^1.0.2",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-source-firebase": "^1.0.0",
